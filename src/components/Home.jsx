@@ -12,23 +12,23 @@ const Home = () => {
       <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row">
         <div className="flex flex-col justify-center h-full">
           <h2 className="text-4xl sm:text-7xl font-bold text-white px-4">
-            I'm a Full Stack Developer
+            Ich bin ein Software Developer
           </h2>
-          <p className="text-gray-500 py-4 max-w-md ">
-            <p>
+          <ul className="text-gray-500 p-4 padding max-w-md list-disc">
+            <li>
               Full-Stack Software-Developement mit JavaScript, Angular und
               TypeScript
-            </p>
-            <p>API-Aufrufe für REST-APIs via Postman</p>
-            <p>Datenbank-Queries für u.A. MSSQL und PostgreSQL</p>
-            <p>Testing und Dokumentation von neuen Funktionen via PHPUnit</p>
-            <p>Versionierungskontrolle mit zyklischen Releases</p>
-            <p>Pluginaktualisierung für eine Authentifizierung mit LDAP</p>
-            <p>Agile Coding mit Scrum-Methoden und Sprints</p>
-            <p>
+            </li>
+            <li>API-Aufrufe für REST-APIs via Postman</li>
+            <li>Datenbank-Queries für u.A. MSSQL und PostgreSQL</li>
+            <li>Testing und Dokumentation von neuen Funktionen via PHPUnit</li>
+            <li>Versionierungskontrolle mit zyklischen Releases</li>
+            <li>Pluginaktualisierung für eine Authentifizierung mit LDAP</li>
+            <li>Agile Coding mit Scrum-Methoden und Sprints</li>
+            <li>
               Code- und Designanpassungen in kundenorientierten Lösungsansätzen
-            </p>
-          </p>
+            </li>
+          </ul>
 
           <div>
             <Link
