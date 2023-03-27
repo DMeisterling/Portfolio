@@ -5,18 +5,23 @@ import Portfolio from "./components/Portfolio";
 import SocialLinks from "./components/SocialLinks";
 import Experience from "./components/Experience";
 import Contact from "./components/Contact";
+import { useState } from "react";
 
 function App() {
-  return (
-    <div>
-      <NavBar />
-      <Home />
-      <About />
-      <Portfolio />
-      <Experience />
-      <Contact />
+  const [darkMode, setDarkMode] = useState(true);
 
-      <SocialLinks />
+  return (
+    <div className={darkMode && "dark"}>
+      <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
+      <main className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
+        <Home />
+        <About />
+        <Portfolio />
+        <Experience />
+        <Contact />
+
+        <SocialLinks />
+      </main>
     </div>
   );
 }

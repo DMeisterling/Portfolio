@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
+import { MdNightsStay, MdWbSunny } from "react-icons/md";
 import { Link } from "react-scroll";
 
-const NavBar = () => {
+const NavBar = ({ darkMode, setDarkMode }) => {
   const [nav, setNav] = useState(false);
 
   const links = [
@@ -29,7 +30,7 @@ const NavBar = () => {
   ];
 
   return (
-    <div className="flex justify-between items-center w-full h-20 px-4 text-white bg-black fixed">
+    <div className="flex justify-between items-center w-full h-20 px-4 text-white bg-black dark:text-teal-300 dark:bg-gray-900 fixed">
       <div>
         <h1 className="text-5xl font-signature ml-2">Daniel Meisterling</h1>
       </div>
@@ -71,6 +72,13 @@ const NavBar = () => {
               </Link>
             </li>
           ))}
+          <li onClick={() => setDarkMode(!darkMode)}>
+            {darkMode ? (
+              <MdWbSunny className="text-2xl cursor-pointer" />
+            ) : (
+              <MdNightsStay className="text-2xl cursor-pointer" />
+            )}
+          </li>
         </ul>
       )}
     </div>
