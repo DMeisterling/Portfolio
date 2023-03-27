@@ -11,28 +11,37 @@ const Home = () => {
           <h2 className="text-4xl sm:text-7xl font-bold px-4">
             Hallo, ich entwickle Software!
           </h2>
-          <ul className="dark:text-gray-200 text-black p-4 padding max-w-md list-disc">
-            <li>
+          <ul className="dark:text-gray-200 text-black p-4 max-w-lg list-disc">
+            <li className="pt-4">
               Full-Stack Software-Developement mit JavaScript, Angular und
               TypeScript
             </li>
-            <li>API-Aufrufe für REST-APIs via Postman</li>
-            <li>Datenbank-Queries für u.A. MSSQL und PostgreSQL</li>
-            <li>Testing und Dokumentation von neuen Funktionen via PHPUnit</li>
-            <li>Versionierungskontrolle mit zyklischen Releases</li>
-            <li>Pluginaktualisierung für eine Authentifizierung mit LDAP</li>
-            <li>Agile Coding mit Scrum-Methoden und Sprints</li>
-            <li>
+            <li className="pt-3">API-Aufrufe für REST-APIs via Postman</li>
+            <li className="pt-3">
+              Datenbank-Queries für u.A. MSSQL und PostgreSQL
+            </li>
+            <li className="pt-3">
+              Testing und Dokumentation von neuen Funktionen via PHPUnit
+            </li>
+            <li className="pt-3">
+              Versionierungskontrolle mit zyklischen Releases
+            </li>
+            <li className="pt-3">
+              Pluginaktualisierung für eine Authentifizierung mit LDAP
+            </li>
+            <li className="pt-3">
+              Agile Coding mit Scrum-Methoden und Sprints
+            </li>
+            <li className="pt-3">
               Code- und Designanpassungen in kundenorientierten Lösungsansätzen
             </li>
           </ul>
-
           <div>
             <Link
               to="portfolio"
               smooth
               duration={500}
-              className="group text-white w-fit px-6 py-3 my-2 flex items-center rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 cursor-pointer"
+              className="group w-fit px-6 py-3 my-2 flex items-center rounded-md bg-gradient-to-r from-cyan-500 to-blue-500 cursor-pointer"
             >
               Portfolio
               <span className="group-hover:rotate-90 duration-300">
