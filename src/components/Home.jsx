@@ -6,12 +6,17 @@ import { Link } from "react-scroll";
 const Home = () => {
   return (
     <div name="home" className="h-screen w-full">
-      <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row">
-        <div className="flex flex-col justify-center h-full pl-14">
-          <h2 className="text-4xl sm:text-7xl font-bold px-4">
-            Hallo, ich entwickle Software!
-          </h2>
-          <ul className="dark:text-gray-200 text-black p-4 max-w-lg list-disc">
+      <div class="fit mx-auto flex flex-col items-center justify-center h-80 px-4 text-center">
+        <h2 class="text-3xl sm:text-7xl md:text-7xl font-bold border-b-4 border-l-4 border-gray-500 pb-4 px-2">
+          Daniel Meisterling
+        </h2>
+        <h3 class="text-2xl sm:text-4xl md:text-6xl font-bold border-b-4 border-r-4 border-emerald-500 pb-4 px-2">
+          Software Developer
+        </h3>
+      </div>
+      <div className="max-w-screen-lg mx-auto flex flex-col md:flex-row items-center justify-center px-4">
+        <div className="flex flex-col justify-center max-w-lg w-full">
+          <ul className="dark:text-gray-200 text-black p-4 list-disc">
             <li className="pt-4">
               Full-Stack Software-Developement mit JavaScript, Angular und
               TypeScript
@@ -36,7 +41,7 @@ const Home = () => {
               Code- und Designanpassungen in kundenorientierten Lösungsansätzen
             </li>
           </ul>
-          <div>
+          <div className="flex justify-center">
             <Link
               to="portfolio"
               smooth
@@ -50,12 +55,11 @@ const Home = () => {
             </Link>
           </div>
         </div>
-        <div>
+        <div className="flex justify-center w-full md:w-1/2">
           <img
             src={HeroImage}
             alt="my profile"
-            //className="rounded-2xl mx-auto w-2/3 md:w-2/3"
-            className="rounded-2xl w-60 h-60 md:w-80 md:h-80 lg:w-96 lg:h-96  object-cover object-top"
+            className="rounded-2xl w-60 h-60 md:w-80 md:h-80 lg:w-96 lg:h-96 object-cover object-top"
           />
         </div>
       </div>

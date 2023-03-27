@@ -15,3 +15,8 @@
 .sig {
   font-family: "Kalam", cursive;
 }
+
+.fit {
+  max-width: 100%;
+  overflow-x: hidden;
+}
