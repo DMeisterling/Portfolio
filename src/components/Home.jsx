@@ -8,10 +8,10 @@ const Home = () => {
     <div name="home" className="h-screen w-full">
       <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row">
         <div className="flex flex-col justify-center h-full pl-14">
-          <h2 className="text-4xl sm:text-7xl font-bold text-white px-4">
+          <h2 className="text-4xl sm:text-7xl font-bold px-4">
             Hallo, ich entwickle Software!
           </h2>
-          <ul className="text-gray-500 p-4 padding max-w-md list-disc">
+          <ul className="dark:text-gray-200 text-black p-4 padding max-w-md list-disc">
             <li>
               Full-Stack Software-Developement mit JavaScript, Angular und
               TypeScript

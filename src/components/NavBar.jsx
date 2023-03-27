@@ -30,9 +30,9 @@ const NavBar = ({ darkMode, setDarkMode }) => {
   ];
 
   return (
-    <div className="flex justify-between items-center w-full h-20 px-4 text-white bg-black dark:text-teal-300 dark:bg-gray-900 fixed">
+    <div className="flex flex-col justify-between items-center w-full h-20 px-4 text-gray-900 bg-slate-200 dark:text-teal-600 dark:bg-gray-900 fixed border-red-500">
       <div>
-        <h1 className="text-5xl font-signature ml-2">Daniel Meisterling</h1>
+        <h1 className="text-3xl sig ml-2">Daniel Meisterling</h1>
       </div>
 
       <ul className="hidden md:flex">
@@ -46,6 +46,13 @@ const NavBar = ({ darkMode, setDarkMode }) => {
             </Link>
           </li>
         ))}
+        <li onClick={() => setDarkMode(!darkMode)}>
+          {darkMode ? (
+            <MdWbSunny className="text-2xl cursor-pointer" />
+          ) : (
+            <MdNightsStay className="text-2xl cursor-pointer" />
+          )}
+        </li>
       </ul>
 
       <div
@@ -56,7 +63,7 @@ const NavBar = ({ darkMode, setDarkMode }) => {
       </div>
 
       {nav && (
-        <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-black to-gray-800 text-gray-500">
+        <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-black bold">
           {links.map(({ id, link }) => (
             <li
               key={id}
@@ -72,13 +79,6 @@ const NavBar = ({ darkMode, setDarkMode }) => {
               </Link>
             </li>
           ))}
-          <li onClick={() => setDarkMode(!darkMode)}>
-            {darkMode ? (
-              <MdWbSunny className="text-2xl cursor-pointer" />
-            ) : (
-              <MdNightsStay className="text-2xl cursor-pointer" />
-            )}
-          </li>
         </ul>
       )}
     </div>
