@@ -4,7 +4,7 @@ const About = () => {
   return (
     <div
       name="über mich"
-      className="w-full h-screen dark:bg-gradient-to-b dark:from-gray-900 dark:via-dark-emerald dark:to-gray-900"
+      className="w-full h-screen dark:bg-gradient-to-b dark:from-gray-900 dark:via-dark-emerald dark:to-gray-900 bg-gradient-to-b  from-slate-200 via-slate-500 to-slate-200"
     >
       <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
         <div className="pb-8">
@@ -18,9 +18,9 @@ const About = () => {
         <br />
         <p className="text-xl">
           Ich habe zuletzt als Anwendungsentwickler gearbeitet. Zu meinem
-          Arbeitsalltag gehörten außer dem Programmieren im Frontend als auch im
-          Backend auch noch die Verwaltung von Servern und Datenbanken, der
-          Support von Kunden per Anfragen und Dokumentation von Änderungen und
+          Arbeitsalltag gehörten neben dem Programmieren im Frontend als auch im
+          Backend auch die Verwaltung von Servern und Datenbanken, der Support
+          von Kunden per Anfragen und Dokumentation von Änderungen und
           Anleitungen. Die Erfassung von Anforderungen von Kunden und
           Abteilungen sowie die Fehleranalyse und Behebung von Fehlern waren
           auch Teil meiner Tätigkeit.

@@ -5,12 +5,15 @@ import { Link } from "react-scroll";
 
 const Home = () => {
   return (
-    <div name="home" className="h-screen w-full">
+    <div
+      name="home"
+      className="h-screen w-full dark:bg-gradient-to-b dark:from-gray-900 dark:via-dark-emerald dark:to-gray-900 bg-gradient-to-b  from-slate-200 via-slate-500 to-slate-200"
+    >
       <div class="fit mx-auto flex flex-col items-center justify-center h-80 px-4 text-center">
-        <h2 class="text-3xl sm:text-7xl md:text-7xl font-bold border-b-4 border-gray-500 pb-4 px-2">
+        <h2 class="text-3xl sm:text-7xl md:text-7xl font-bold pb-2 px-2">
           Daniel Meisterling
         </h2>
-        <h3 class="text-2xl sm:text-4xl md:text-6xl font-bold border-b-4 border-gray-500 pb-4 px-2">
+        <h3 class="text-2xl sm:text-4xl md:text-6xl font-bold border-b-4 border-gray-500 pb-2 px-2">
           Software Developer
         </h3>
       </div>

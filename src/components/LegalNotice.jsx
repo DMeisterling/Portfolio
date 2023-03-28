@@ -2,15 +2,20 @@ import React from "react";
 
 const LegalNotice = () => {
   return (
-    <div name="impressum" className="h-screen w-full">
+    <div
+      name="impressum"
+      className="h-screen w-full dark:bg-gradient-to-b dark:from-gray-900 dark:to-dark-emerald bg-gradient-to-b  from-slate-200 via-slate-500 to-slate-200"
+    >
       <div class="mx-auto flex flex-col items-center justify-center h-80 px-4 text-center">
         <h2 class="text-3xl sm:text-7xl md:text-7xl font-bold border-b-4 border-l-4 border-gray-500 pb-4 px-2">
           Impressum
         </h2>
       </div>
-      <div className="mx-auto flex flex-col items-center justify-center h-80 px-4 text-center">
+      <div className="mx-auto flex flex-col items-center justify-center h-80 px-4">
         <div className="text-xl sm:text-2xl md:text-2xl pb-4 px-2 font-thin">
-          <h2>Angaben gem&auml;&szlig; &sect; 5 TMG</h2>
+          <h2 className="border-b-4 border-gray-500 pb-2 font-bold">
+            Angaben gem&auml;&szlig; &sect; 5 TMG
+          </h2>
           <br />
           <p>
             Daniel Meisterling
@@ -20,7 +25,7 @@ const LegalNotice = () => {
             84489 Burghausen
           </p>
           <br />
-          <h2 className="border-b pb-2">Kontakt</h2>
+          <h2 className="border-b-4 border-gray-500 pb-2 font-bold">Kontakt</h2>
           <p className="pt-2">
             Telefon: +49 173 8419767
             <br />

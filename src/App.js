@@ -12,12 +12,13 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
-
+  <title>Daniel Meisterling</title>;
   return (
     <div className={darkMode && "dark"}>
       <BrowserRouter>
         <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
         <main className="bg-slate-200 dark:bg-gray-900 text-gray-900 font-bold dark:text-white">
+          <title>faf</title>
           <Routes>
             <Route
               path="/"
