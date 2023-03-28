@@ -54,8 +54,11 @@ const Experience = () => {
   ];
 
   return (
-    <div name="erfahrung" className="w-full h-screen">
-      <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-900 dark:to-gray-900 bg-gradient-to-b  from-slate-200 via-slate-500 to-slate-200">
+    <div
+      name="erfahrung"
+      className="w-full h-screen dark:bg-gradient-to-b dark:from-gray-900 dark:via-gray-900 dark:to-gray-900 bg-gradient-to-b  from-slate-200 via-slate-500 to-slate-200"
+    >
+      <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full">
         <div>
           <p className="text-4xl font-bold border-b-4 border-gray-500 p-2 inline">
             Erfahrung

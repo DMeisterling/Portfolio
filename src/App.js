@@ -5,23 +5,45 @@ import Portfolio from "./components/Portfolio";
 import SocialLinks from "./components/SocialLinks";
 import Experience from "./components/Experience";
 import Contact from "./components/Contact";
+import Footer from "./components/Footer";
+import LegalNotice from "./components/LegalNotice";
 import { useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
 
   return (
     <div className={darkMode && "dark"}>
-      <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
-      <main className="bg-slate-200 dark:bg-gray-900 text-gray-900 font-bold dark:text-white">
-        <Home />
-        <About />
-        <Portfolio />
-        <Experience />
-        <Contact />
-
-        <SocialLinks />
-      </main>
+      <BrowserRouter>
+        <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
+        <main className="bg-slate-200 dark:bg-gray-900 text-gray-900 font-bold dark:text-white">
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <Home />
+                  <About />
+                  <Portfolio />
+                  <Experience />
+                  <Contact />
+                  <SocialLinks />
+                  <Footer />
+                </>
+              }
+            />
+            <Route
+              path="/Impressum"
+              element={
+                <>
+                  <LegalNotice />
+                </>
+              }
+            />
+          </Routes>
+        </main>
+      </BrowserRouter>
     </div>
   );
 }

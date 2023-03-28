@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { MdNightsStay, MdWbSunny } from "react-icons/md";
 import { Link } from "react-scroll";
+import { useNavigate } from "react-router-dom";
 
 const NavBar = ({ darkMode, setDarkMode }) => {
   const [nav, setNav] = useState(false);
+  const navigate = useNavigate();
 
   const links = [
     {
@@ -30,16 +32,31 @@ const NavBar = ({ darkMode, setDarkMode }) => {
   ];
 
   return (
-    <div className="flex flex-col ontop justify-between items-center w-full h-12 px-4 pt-3 text-gray-900 bg-slate-200 dark:text-emerald-500 dark:bg-gray-900 fixed border-b-4 border-emerald-500">
+    <div className="flex flex-col ontop justify-between items-center w-full h-12 px-3 pt-2 text-gray-900 bg-slate-200 dark:text-emerald-500 dark:bg-gray-900 fixed border-b-4 border-emerald-500">
       <ul className="hidden md:flex justify-center items-center">
         {links.map(({ id, link }) => (
           <li
             key={id}
-            className="px-4 cursor-pointer capitalize font-bold text-gray-500 hover:scale-105 duration-200"
+            className="px-3 cursor-pointer capitalize font-bold text-gray-500 hover:scale-105 duration-200 text-xl"
           >
-            <Link to={link} smooth duration={500}>
-              {link}
-            </Link>
+            {window.location.pathname === "/Impressum" ? (
+              <button
+                onClick={() => navigate("/")}
+                className="cursor-pointer capitalize font-bold text-gray-500 hover:scale-105 duration-200 text-xl"
+              >
+                {link}
+              </button>
+            ) : (
+              <Link
+                to={link}
+                activeClass="active"
+                spy={true}
+                smooth
+                duration={500}
+              >
+                {link}
+              </Link>
+            )}
           </li>
         ))}
         <li onClick={() => setDarkMode(!darkMode)} className="ml-4">
@@ -65,14 +82,23 @@ const NavBar = ({ darkMode, setDarkMode }) => {
               key={id}
               className="px-4 cursor-pointer capitalize py-6 text-4xl"
             >
-              <Link
-                onclick={() => setNav(!nav)}
-                to={link}
-                smooth
-                duration={500}
-              >
-                {link}
-              </Link>
+              {window.location.pathname === "/Impressum" ? (
+                <button
+                  onClick={() => navigate("/")}
+                  className="px-4 cursor-pointer capitalize py-6 text-4xl"
+                >
+                  {link}
+                </button>
+              ) : (
+                <Link
+                  onclick={() => setNav(!nav)}
+                  to={link}
+                  smooth
+                  duration={500}
+                >
+                  {link}
+                </Link>
+              )}
             </li>
           ))}
           <li onClick={() => setDarkMode(!darkMode)}>
