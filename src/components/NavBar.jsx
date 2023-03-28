@@ -32,14 +32,15 @@ const NavBar = ({ darkMode, setDarkMode }) => {
   ];
 
   return (
-    <div className="flex flex-col ontop justify-between items-center w-full h-12 px-3 pt-2 text-gray-900 bg-slate-200 dark:text-emerald-500 dark:bg-gray-900 fixed border-b-4 border-emerald-500">
+    <div className="flex flex-col ontop justify-between items-center w-full h-12 px-3 pt-2 text-gray-900 bg-slate-200 dark:text-white dark:bg-gray-900 fixed border-b-4 border-emerald-500">
       <ul className="hidden md:flex justify-center items-center">
         {links.map(({ id, link }) => (
           <li
             key={id}
             className="px-3 cursor-pointer capitalize font-bold text-gray-500 hover:scale-105 duration-200 text-xl"
           >
-            {window.location.pathname === "/Impressum" ? (
+            {window.location.pathname === "/Impressum" ||
+            window.location.pathname === "/Datenschutz" ? (
               <button
                 onClick={() => navigate("/")}
                 className="cursor-pointer capitalize font-bold text-gray-500 hover:scale-105 duration-200 text-xl"

@@ -1,0 +1,32 @@
+.h1sec {
+  font-size: 3em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+}
+
+.h2sec {
+  font-size: 2em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  color: #a8d2ee;
+}
+
+.h3sec {
+  font-size: 1.5em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  color: #a8d2ee;
+}
+
+.h4sec {
+  font-size: 1.25em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  color: #a8d2ee;
+}
+
+.pSec {
+  font-size: 1em;
+  line-height: 1.5;
+  margin-bottom: 1.5em;
+}

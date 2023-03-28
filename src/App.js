@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import LegalNotice from "./components/LegalNotice";
 import { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Security from "./components/Security";
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
@@ -39,6 +40,14 @@ function App() {
               element={
                 <>
                   <LegalNotice />
+                </>
+              }
+            />
+            <Route
+              path="/Datenschutz"
+              element={
+                <>
+                  <Security />
                 </>
               }
             />
