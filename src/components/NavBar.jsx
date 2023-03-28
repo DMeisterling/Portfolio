@@ -30,12 +30,8 @@ const NavBar = ({ darkMode, setDarkMode }) => {
   ];
 
   return (
-    <div className="flex flex-col justify-between items-center w-full h-12 px-4 text-gray-900 bg-slate-200 dark:text-emerald-500 dark:bg-gray-900 fixed border-b-2">
-      {/* <div>
-        <h1 className="text-3xl sig ml-2">Daniel Meisterling</h1>
-      </div> */}
-
-      <ul className="hidden md:flex pt-4">
+    <div className="flex flex-col ontop justify-between items-center w-full h-12 px-4 pt-3 text-gray-900 bg-slate-200 dark:text-emerald-500 dark:bg-gray-900 fixed border-b-4 border-emerald-500">
+      <ul className="hidden md:flex justify-center items-center">
         {links.map(({ id, link }) => (
           <li
             key={id}
@@ -46,7 +42,7 @@ const NavBar = ({ darkMode, setDarkMode }) => {
             </Link>
           </li>
         ))}
-        <li onClick={() => setDarkMode(!darkMode)}>
+        <li onClick={() => setDarkMode(!darkMode)} className="ml-4">
           {darkMode ? (
             <MdWbSunny className="text-2xl cursor-pointer" />
           ) : (
@@ -57,13 +53,13 @@ const NavBar = ({ darkMode, setDarkMode }) => {
 
       <div
         onClick={() => setNav(!nav)}
-        className="cursor-pointer pr-4 z-10 pt-2 text-gray-500 md:hidden"
+        className="cursor-pointer pr-4 z-10 text-gray-500 md:hidden"
       >
         {nav ? <FaTimes size={30} /> : <FaBars size={30} />}
       </div>
 
       {nav && (
-        <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen bg-gradient-to-b from-gray-900 to-gray-800 text-black bold">
+        <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen  bg-gradient-to-b from-gray-900 to-gray-800 text-black bold">
           {links.map(({ id, link }) => (
             <li
               key={id}
