@@ -1,5 +1,4 @@
 import React from "react";
-import HeroImage from "../assets/heroImage.png";
 
 const LegalNotice = () => {
   return (
