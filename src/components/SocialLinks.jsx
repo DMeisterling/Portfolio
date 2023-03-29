@@ -1,6 +1,7 @@
 import React from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
+import { BsFillPersonLinesFill } from "react-icons/bs";
 
 const SocialLinks = () => {
   const links = [
@@ -30,20 +31,19 @@ const SocialLinks = () => {
           <HiOutlineMail size={30} /> Mail
         </>
       ),
-      style: "rounded-bl-md",
       href: "mailto:dan-meisterling@t-online.de",
     },
-    // {
-    //   id: 4,
-    //   child: (
-    //     <>
-    //       <BsFillPersonLinesFill size={30} /> Resume
-    //     </>
-    //   ),
-    //   href: "/resume.pdf",
-    //   style: "rounded-bl-md",
-    //   download: true,
-    // },
+    {
+      id: 4,
+      child: (
+        <>
+          <BsFillPersonLinesFill size={30} /> Resume
+        </>
+      ),
+      href: "/resume.pdf",
+      style: "rounded-bl-md",
+      download: true,
+    },
   ];
 
   return (

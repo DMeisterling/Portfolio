@@ -16,11 +16,6 @@
   font-family: "Kalam", cursive;
 }
 
-.fit {
-  max-width: 100%;
-  overflow-x: hidden;
-}
-
 .ontop {
   top: 0;
   z-index: 999;
