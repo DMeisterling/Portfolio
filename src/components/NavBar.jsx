@@ -83,13 +83,13 @@ const NavBar = ({ darkMode, setDarkMode }) => {
       </div>
 
       {nav && (
-        <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen  bg-gradient-to-b from-gray-900 to-gray-800 text-black bold">
+        <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen  px-3 cursor-pointer capitalize font-bold dark:text-gray-300 text-xl dark:bg-gradient-to-b dark:from-gray-900 dark:to-green-900 bg-gradient-to-b  from-slate-200 via-slate-400 to-slate-500">
           {links.map(({ id, link }) => (
             <li
               key={id}
               className="px-4 cursor-pointer capitalize py-6 text-4xl"
             >
-              {window.location.pathname === "/Impressum" ? (
+              {window.location.pathname === "/Impressum" || window.location.pathname === "/Datenschutz"  ? (
                 <button
                   onClick={() => navigate("/")}
                   className="px-4 cursor-pointer capitalize py-6 text-4xl"
