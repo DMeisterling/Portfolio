@@ -21,7 +21,7 @@ const NavBar = ({ darkMode, setDarkMode }) => {
     },
     {
       id: 3,
-      link: "portfolio",
+      link: "projekte",
     },
     {
       id: 4,
@@ -57,6 +57,7 @@ const NavBar = ({ darkMode, setDarkMode }) => {
                 spy={true}
                 smooth
                 duration={500}
+                offset={-100}
               >
                 {link}
               </Link>
