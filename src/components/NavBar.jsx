@@ -3,6 +3,7 @@ import { FaBars, FaTimes } from "react-icons/fa";
 import { MdNightsStay, MdWbSunny } from "react-icons/md";
 import { Link } from "react-scroll";
 import { useNavigate } from "react-router-dom";
+import DayNightToggle from 'react-day-and-night-toggle'
 
 const NavBar = ({ darkMode, setDarkMode }) => {
   const [nav, setNav] = useState(false);
@@ -60,11 +61,19 @@ const NavBar = ({ darkMode, setDarkMode }) => {
             )}
           </li>
         ))}
-        <li onClick={() => setDarkMode(!darkMode)} className="ml-4">
+        <li onClick={() => setDarkMode(!darkMode)} className="ml-8 w-fit cursor-pointer">
           {darkMode ? (
-            <MdWbSunny className="text-2xl cursor-pointer" />
+            <DayNightToggle
+            checked={darkMode}
+            size={24}
+          />
+            // <MdWbSunny className="text-2xl cursor-pointer" />
           ) : (
-            <MdNightsStay className="text-2xl cursor-pointer" />
+            <DayNightToggle
+              checked={darkMode}
+              size={24}
+            />
+            // <MdNightsStay className="text-2xl cursor-pointer" />
           )}
         </li>
       </ul>
@@ -104,9 +113,17 @@ const NavBar = ({ darkMode, setDarkMode }) => {
           ))}
           <li onClick={() => setDarkMode(!darkMode)}>
             {darkMode ? (
-              <MdWbSunny className="text-2xl cursor-pointer" />
+              <DayNightToggle
+              checked={darkMode}
+              size={24}
+            />
+              // <MdWbSunny className="text-2xl cursor-pointer" />
             ) : (
-              <MdNightsStay className="text-2xl cursor-pointer" />
+              <DayNightToggle
+              checked={darkMode}
+              size={24}
+            />
+              // <MdNightsStay className="text-2xl cursor-pointer" />
             )}
           </li>
         </ul>
