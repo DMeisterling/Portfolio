@@ -12,7 +12,7 @@ const LegalNotice = () => {
         </h2>
       </div>
       <div className="mx-auto flex flex-col items-center justify-center h-80 px-4">
-        <div className="text-xl sm:text-2xl md:text-2xl pb-4 px-2 font-thin">
+        <div className="text-xl sm:text-2xl md:text-2xl pb-4 px-2 font">
           <h2 className="border-b-4 border-gray-500 pb-2 font-bold">
             Angaben gem&auml;&szlig; &sect; 5 TMG
           </h2>

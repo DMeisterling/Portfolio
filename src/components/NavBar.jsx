@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { MdNightsStay, MdWbSunny } from "react-icons/md";
 import { Link } from "react-scroll";
 import { useNavigate } from "react-router-dom";
 import DayNightToggle from 'react-day-and-night-toggle'
@@ -67,13 +66,11 @@ const NavBar = ({ darkMode, setDarkMode }) => {
             checked={darkMode}
             size={24}
           />
-            // <MdWbSunny className="text-2xl cursor-pointer" />
           ) : (
             <DayNightToggle
               checked={darkMode}
               size={24}
             />
-            // <MdNightsStay className="text-2xl cursor-pointer" />
           )}
         </li>
       </ul>
@@ -117,13 +114,11 @@ const NavBar = ({ darkMode, setDarkMode }) => {
               checked={darkMode}
               size={24}
             />
-              // <MdWbSunny className="text-2xl cursor-pointer" />
             ) : (
               <DayNightToggle
               checked={darkMode}
               size={24}
             />
-              // <MdNightsStay className="text-2xl cursor-pointer" />
             )}
           </li>
         </ul>
