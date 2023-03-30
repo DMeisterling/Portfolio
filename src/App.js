@@ -19,7 +19,6 @@ function App() {
       <BrowserRouter>
         <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
         <main className="bg-slate-200 dark:bg-gray-900 text-gray-900 font-bold dark:text-white">
-          <title>faf</title>
           <Routes>
             <Route
               path="/"
