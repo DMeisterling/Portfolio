@@ -7,7 +7,7 @@ const Portfolio = () => {
       name: "Portfolio",
       id: 1,
       src: portfolioProject,
-      demo: true,
+      demo: false,
       linkSrc: "https://github.com/DMeisterling/Portfolio"
     },
   ];
