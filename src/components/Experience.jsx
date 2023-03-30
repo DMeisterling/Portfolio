@@ -19,14 +19,14 @@ const Experience = () => {
       src: html,
       title: "HTML",
       style: "shadow-orange-500",
-      experience: "bg-60%"
+      experience: "bg-80%"
     },
     {
       id: 2,
       src: css,
       title: "CSS",
       style: "shadow-blue-500",
-      experience: "bg-60%"
+      experience: "bg-80%"
     },
     {
       id: 3,
@@ -61,21 +61,21 @@ const Experience = () => {
       src: github,
       title: "Github",
       style: "shadow-gray-400",
-      experience: "bg-80%"
+      experience: "bg-60%"
     },
     {
       id: 8,
       src: php,
       title: "Php",
       style: "shadow-violet-500",
-      experience: "bg-20%"
+      experience: "bg-40%"
     },
     {
       id: 9,
       src: angular,
       title: "Angular",
       style: "shadow-red-500",
-      experience: "bg-20%"
+      experience: "bg-40%"
     },
     {
       id: 10,
