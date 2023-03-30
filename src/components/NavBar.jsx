@@ -5,8 +5,10 @@ import { useNavigate } from "react-router-dom";
 import DayNightToggle from 'react-day-and-night-toggle'
 
 const NavBar = ({ darkMode, setDarkMode }) => {
+
   const [nav, setNav] = useState(false);
   const navigate = useNavigate();
+
 
   const links = [
     {
@@ -49,6 +51,7 @@ const NavBar = ({ darkMode, setDarkMode }) => {
               </button>
             ) : (
               <Link
+                onClick={() => setNav(false)}
                 to={link}
                 activeClass="active"
                 spy={true}
@@ -91,14 +94,14 @@ const NavBar = ({ darkMode, setDarkMode }) => {
             >
               {window.location.pathname === "/Impressum" || window.location.pathname === "/Datenschutz"  ? (
                 <button
-                  onClick={() => navigate("/")}
+                  onClick={() => {navigate("/");setNav(!nav);}}
                   className="px-4 cursor-pointer capitalize py-6 text-4xl"
                 >
                   {link}
                 </button>
               ) : (
                 <Link
-                  onclick={() => setNav(!nav)}
+                  onClick={() => setNav(!nav)}
                   to={link}
                   smooth
                   duration={500}
