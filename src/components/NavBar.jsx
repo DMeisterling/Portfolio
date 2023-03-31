@@ -106,6 +106,7 @@ const NavBar = ({ darkMode, setDarkMode }) => {
                   to={link}
                   smooth
                   duration={500}
+                  offset={-100}
                 >
                   {link}
                 </Link>
