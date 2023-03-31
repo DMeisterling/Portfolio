@@ -9,6 +9,11 @@ const NavBar = ({ darkMode, setDarkMode }) => {
   const [nav, setNav] = useState(false);
   const navigate = useNavigate();
 
+   window.matchMedia("(orientation: portrait)").addEventListener("change", e => {
+    setNav(false);
+   });
+
+
 
   const links = [
     {
