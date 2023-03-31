@@ -35,7 +35,7 @@ const NavBar = ({ darkMode, setDarkMode }) => {
 
   return (
     <div className="flex flex-col ontop justify-between items-center w-full h-12 px-3 pt-2 text-gray-900 bg-slate-200 dark:text-white dark:bg-gray-900 fixed border-b-4 border-emerald-500">
-      <ul className="hidden md:flex justify-center items-center">
+      <ul className="hidden landscape:flex md:flex justify-center items-center">
         {links.map(({ id, link }) => (
           <li
             key={id}
@@ -81,7 +81,7 @@ const NavBar = ({ darkMode, setDarkMode }) => {
 
       <div
         onClick={() => setNav(!nav)}
-        className="cursor-pointer z-10 text-gray-500 md:hidden"
+        className="cursor-pointer z-10 text-gray-500 landscape:hidden md:hidden"
       >
         {nav ? <FaTimes size={30} /> : <FaBars size={30} />}
       </div>
