@@ -91,7 +91,7 @@ const NavBar = ({ darkMode, setDarkMode }) => {
           {links.map(({ id, link }) => (
             <li
               key={id}
-              className="px-4 cursor-pointer capitalize py-2 text-4xl"
+              className="px-4 cursor-pointer capitalize text-xl"
             >
               {window.location.pathname === "/Impressum" || window.location.pathname === "/Datenschutz"  ? (
                 <button
