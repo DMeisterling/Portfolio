@@ -1,5 +1,5 @@
 import React from "react";
-import portfolioProject from "../assets/portfolioProject.png";
+import portfolioProject from "../assets/portfolio-scroll.mp4";
 
 const Portfolio = () => {
   const portfolios = [
@@ -7,8 +7,9 @@ const Portfolio = () => {
       name: "Portfolio",
       id: 1,
       src: portfolioProject,
+      srcVideo: true,
       demo: false,
-      linkSrc: "https://github.com/DMeisterling/Portfolio"
+      linkSrc: "https://github.com/DMeisterling/Portfolio",
     },
   ];
 
@@ -26,32 +27,62 @@ const Portfolio = () => {
         </div>
 
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0">
-  {portfolios.map(({ name, id, src, demo, demoSrc, linkSrc }) => (
-    <div key={id} className="shadow-md shadow-gray-600 rounded-lg duration-200 hover:scale-110">
-      <img src={src} alt="" className="rounded-t aspect-video" />
+          {portfolios.map(
+            ({ name, id, src, demo, demoSrc, linkSrc, srcVideo }) => (
+              <div
+                key={id}
+                className="shadow-md shadow-gray-600 rounded-lg duration-200 hover:scale-110"
+              >
+                {srcVideo === true ? (
+                  <video
+                    className="rounded-t aspect-video"
+                    muted
+                    onMouseOver={(event) => event.target.play()}
+                    onMouseOut={(event) => {
+                      event.target.pause();
+                      event.target.currentTime = 0;
+                    }}
+                  >
+                    <source src={src} type="video/mp4"></source>
+                  </video>
+                ) : (
+                  <img src={src} alt="" className="rounded-t aspect-video" />
+                )}
+                <div className="flex items-center justify-center">
+                  {demo ? (
+                    <form
+                      action={demoSrc}
+                      target="_blank"
+                      className="w-1/2 rounded-l"
+                    >
+                      <button className="w-full py-3 bg-gradient-to-r from-cyan-500 via-blue-500 to-cyan-500 cursor-pointer">
+                        Demo
+                      </button>
+                    </form>
+                  ) : null}
 
-      <div className="flex items-center justify-center">
-        {demo ? (
-          <form action={demoSrc} target="_blank" className="w-1/2 rounded-l">
-            <button className="w-full py-3 bg-gradient-to-r from-cyan-500 via-blue-500 to-cyan-500 cursor-pointer">
-              Demo
-            </button>
-          </form>
-        ) : null}
+                  <form
+                    action={linkSrc}
+                    target="_blank"
+                    className={`${
+                      demo
+                        ? "w-1/2 border-l border-gray-400"
+                        : "w-full rounded-md"
+                    }`}
+                  >
+                    <button className="w-full py-3 bg-gradient-to-r  from-cyan-500 via-blue-500 to-cyan-500 cursor-pointer">
+                      Github
+                    </button>
+                  </form>
+                </div>
 
-        <form action={linkSrc} target="_blank" className={`${demo ? 'w-1/2 border-l border-gray-400' : 'w-full rounded-md'}`}>
-          <button className="w-full py-3 bg-gradient-to-r  from-cyan-500 via-blue-500 to-cyan-500 cursor-pointer">
-            Github
-          </button>
-        </form>
-      </div>
-
-      <div className="flex items-center justify-center border-t-2 border-slate-500 pt-1 mb-1 ">
-        {name}
-      </div>
-    </div>
-  ))}
-</div>
+                <div className="flex items-center justify-center border-t-2 border-slate-500 pt-1 mb-1 ">
+                  {name}
+                </div>
+              </div>
+            )
+          )}
+        </div>
       </div>
     </div>
   );

@@ -9,11 +9,11 @@ const Home = () => {
       name="home"
       className="pb-8 pt-10 sm:pt-20 w-full dark:bg-gradient-to-b dark:from-gray-900 dark:via-dark-emerald dark:to-gray-900 bg-gradient-to-b  from-slate-200 via-slate-300 to-slate-200"
     >
-      <div class="mx-auto mb-auto flex flex-col items-center justify-center h-40 px-4 text-center pb-4">
-        <h2 class="text-3xl sm:text-7xl md:text-7xl font-bold pb-2 px-2">
+      <div className="mx-auto mb-auto flex flex-col items-center justify-center h-40 px-4 text-center pb-4">
+        <h2 className="text-3xl sm:text-7xl md:text-7xl font-bold pb-2 px-2">
           Daniel Meisterling
         </h2>
-        <h3 class="text-2xl sm:text-4xl md:text-6xl font-bold border-b-4 border-gray-500 pb-2 px-2">
+        <h3 className="text-2xl sm:text-4xl md:text-6xl font-bold border-b-4 border-gray-500 pb-2 px-2">
           Software Developer
         </h3>
       </div>

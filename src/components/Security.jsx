@@ -7,7 +7,7 @@ const Security = () => {
       name="datenschutz"
       className="h-full w-full dark:bg-gradient-to-b dark:from-gray-900 dark:to-dark-emerald bg-gradient-to-b  from-slate-200 to-slate-200 mt-10"
     >
-      <div class="mx-auto flex flex-col justify-center h-full px-4">
+      <div className="mx-auto flex flex-col justify-center h-full px-4">
         <h1 className="h1sec">Datenschutz&shy;erkl&auml;rung</h1>
         <h2 className="h2sec">1. Datenschutz auf einen Blick</h2>
         <h3 className="h3sec">Allgemeine Hinweise</h3>{" "}
