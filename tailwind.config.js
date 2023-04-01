@@ -14,11 +14,11 @@ module.exports = {
       signature: ["Raleway"],
     },
     backgroundSize: {
-      '20%': 'auto 20%',
-      '40%': 'auto 40%',
-      '60%': 'auto 60%',
-      '80%': 'auto 80%',
-    }
+      "20%": "auto 20%",
+      "40%": "auto 40%",
+      "60%": "auto 60%",
+      "80%": "auto 80%",
+    },
   },
   plugins: [],
 };
