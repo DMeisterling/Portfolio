@@ -121,8 +121,8 @@ techs.sort((a, b) => {
     >
       <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full ">
         <div>
-          <p className="text-4xl font-bold border-b-4 border-gray-500 p-2 inline">
-            Erfahrung
+          <p className="text-4xl font-bold border-b-4 border-gray-500 inline">
+          Erfahrung
           </p>
           <p className="py-6">Meine Skills</p>
         </div>
