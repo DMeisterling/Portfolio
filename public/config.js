@@ -16,7 +16,7 @@ var klaroConfig = {
   // supporting IE9-10 (which you probably shouldn't) you need to use Klaro
   // with an external stylesheet as the dynamic replacement won't work there.
   styling: {
-    theme: ["light", "bottom"],
+    theme: ["dark", "bottom"],
   },
 
   // Setting this to true will keep Klaro from automatically loading itself
@@ -112,7 +112,7 @@ var klaroConfig = {
     // If you erase the "consentModal" translations, Klaro will use the
     // bundled translations.
     de: {
-      privacyPolicyUrl: "/datenschutz",
+      privacyPolicyUrl: "/Datenschutz",
       consentModal: {
         description:
           "Hier können Sie einsehen und anpassen, welche Information wir über Sie sammeln.",
