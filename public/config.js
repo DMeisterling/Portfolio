@@ -75,7 +75,7 @@ var klaroConfig = {
   hideDeclineAll: true,
 
   // hide "learnMore" link
-  hideLearnMore: false,
+  hideLearnMore: true,
 
   // show cookie notice as modal
   noticeAsModal: false,
@@ -107,7 +107,7 @@ var klaroConfig = {
     // translationsed defined under the 'zz' language code act as default
     // translations.
     zz: {
-      privacyPolicyUrl: "/Datenschutz",
+      privacyPolicyUrl: "/#privacy",
     },
     // If you erase the "consentModal" translations, Klaro will use the
     // bundled translations.
