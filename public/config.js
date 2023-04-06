@@ -16,7 +16,7 @@ var klaroConfig = {
   // supporting IE9-10 (which you probably shouldn't) you need to use Klaro
   // with an external stylesheet as the dynamic replacement won't work there.
   styling: {
-    theme: ["dark", "bottom"],
+    theme: ["dark", "bottom", "wide"],
   },
 
   // Setting this to true will keep Klaro from automatically loading itself
@@ -65,17 +65,17 @@ var klaroConfig = {
   // If "mustConsent" is set to true, Klaro will directly display the consent
   // manager modal and not allow the user to close it before having actively
   // consented or declines the use of third-party services.
-  mustConsent: true,
+  mustConsent: false,
 
   // Show "accept all" to accept all services instead of "ok" that only accepts
   // required and "default: true" services
   acceptAll: true,
 
   // replace "decline" with cookie manager modal
-  hideDeclineAll: true,
+  hideDeclineAll: false,
 
   // hide "learnMore" link
-  hideLearnMore: true,
+  hideLearnMore: false,
 
   // show cookie notice as modal
   noticeAsModal: false,
