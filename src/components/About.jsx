@@ -28,9 +28,9 @@ const About = () => {
         </p>
         <br />
         <p className="text-xl">
-          Nach nun über &nbsp;
+          Nach nun über 3&nbsp;
           <span className="font-extrabold underline">
-            3 Jahren Berufserfahrung als Anwendungsentwickler{" "}
+            Jahren Berufserfahrung als Anwendungsentwickler{" "}
           </span>
           möchte ich meine neuen Kenntnisse und Fähigkeiten nutzen und mich
           weiterentwickeln. Schreiben Sie mir gerne eine Email oder nutzen Sie
