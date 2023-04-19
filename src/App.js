@@ -1,15 +1,15 @@
+import { useState } from "react";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import About from "./components/About";
+import Contact from "./components/Contact";
+import Experience from "./components/Experience";
+import Footer from "./components/Footer";
 import Home from "./components/Home";
+import LegalNotice from "./components/LegalNotice";
 import NavBar from "./components/NavBar";
 import Portfolio from "./components/Portfolio";
-import SocialLinks from "./components/SocialLinks";
-import Experience from "./components/Experience";
-import Contact from "./components/Contact";
-import Footer from "./components/Footer";
-import LegalNotice from "./components/LegalNotice";
-import { useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Security from "./components/Security";
+import SocialLinks from "./components/SocialLinks";
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
