@@ -1,6 +1,32 @@
 import React from "react";
 
 const Contact = () => {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    const form = event.target;
+    const nameInput = form.elements.name;
+    const emailInput = form.elements.email;
+    const messageInput = form.elements.message;
+
+    // Validate input values with regex pattern
+    const regex = /^(?!\s*$).+/;
+    const regexEmail = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+    if (
+      regex.test(nameInput.value) &&
+      regex.test(emailInput.value) &&
+      regex.test(messageInput.value)
+    ) {
+      if (regexEmail.test(emailInput.value)) {
+        // Perform form submission
+        form.submit();
+      } else {
+        alert("Bitte vollständige Email eingeben!");
+      }
+    } else {
+      alert("Bitte Felder ausfüllen!");
+    }
+  };
+
   return (
     <div
       name="kontakt"
@@ -19,6 +45,7 @@ const Contact = () => {
             action="https://getform.io/f/ee69fc10-2066-4b66-857d-707c186d2845"
             method="POST"
             className="flex flex-col w-full md:w-1/2"
+            onSubmit={handleSubmit}
           >
             <input
               type="text"

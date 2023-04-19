@@ -1,16 +1,16 @@
 import React from "react";
-import html from "../assets/html.png";
-import css from "../assets/css.png";
-import javascript from "../assets/javascript.png";
-import reactImage from "../assets/react.png";
-import nextjs from "../assets/nextjs.png";
-import github from "../assets/github.png";
-import tailwind from "../assets/tailwind.png";
-import php from "../assets/php.png";
 import angular from "../assets/angular.png";
-import typescript from "../assets/typescript.png";
-import mssql from "../assets/mssql.png";
+import css from "../assets/css.png";
+import github from "../assets/github.png";
+import html from "../assets/html.png";
+import javascript from "../assets/javascript.png";
 import linux from "../assets/linux.png";
+import mssql from "../assets/mssql.png";
+import nextjs from "../assets/nextjs.png";
+import php from "../assets/php.png";
+import reactImage from "../assets/react.png";
+import tailwind from "../assets/tailwind.png";
+import typescript from "../assets/typescript.png";
 
 const Experience = () => {
   const techs = [

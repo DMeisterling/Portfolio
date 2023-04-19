@@ -1,19 +1,18 @@
 import React, { useState } from "react";
+import DayNightToggle from "react-day-and-night-toggle";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { Link } from "react-scroll";
 import { useNavigate } from "react-router-dom";
-import DayNightToggle from 'react-day-and-night-toggle'
+import { Link } from "react-scroll";
 
 const NavBar = ({ darkMode, setDarkMode }) => {
-
   const [nav, setNav] = useState(false);
   const navigate = useNavigate();
 
-   window.matchMedia("(orientation: portrait)").addEventListener("change", e => {
-    setNav(false);
-   });
-
-
+  window
+    .matchMedia("(orientation: portrait)")
+    .addEventListener("change", (e) => {
+      setNav(false);
+    });
 
   const links = [
     {
@@ -69,17 +68,14 @@ const NavBar = ({ darkMode, setDarkMode }) => {
             )}
           </li>
         ))}
-        <li onClick={() => setDarkMode(!darkMode)} className="ml-8 w-fit cursor-pointer">
+        <li
+          onClick={() => setDarkMode(!darkMode)}
+          className="ml-8 w-fit cursor-pointer"
+        >
           {darkMode ? (
-            <DayNightToggle
-            checked={darkMode}
-            size={24}
-          />
+            <DayNightToggle checked={darkMode} size={24} />
           ) : (
-            <DayNightToggle
-              checked={darkMode}
-              size={24}
-            />
+            <DayNightToggle checked={darkMode} size={24} />
           )}
         </li>
       </ul>
@@ -94,13 +90,14 @@ const NavBar = ({ darkMode, setDarkMode }) => {
       {nav && (
         <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen min-h-screen vh-100 px-3 cursor-pointer capitalize font-bold dark:text-white text-xl dark:bg-gradient-to-b dark:from-gray-900 dark:to-green-900 bg-gradient-to-b  from-slate-200 via-slate-400 to-slate-500">
           {links.map(({ id, link }) => (
-            <li
-              key={id}
-              className="px-4 cursor-pointer capitalize text-xl"
-            >
-              {window.location.pathname === "/Impressum" || window.location.pathname === "/Datenschutz"  ? (
+            <li key={id} className="px-4 cursor-pointer capitalize text-xl">
+              {window.location.pathname === "/Impressum" ||
+              window.location.pathname === "/Datenschutz" ? (
                 <button
-                  onClick={() => {navigate("/");setNav(!nav);}}
+                  onClick={() => {
+                    navigate("/");
+                    setNav(!nav);
+                  }}
                   className="cursor-pointer capitalize font-bold text-white hover:scale-105 duration-200 text-xl"
                 >
                   {link}
@@ -120,15 +117,9 @@ const NavBar = ({ darkMode, setDarkMode }) => {
           ))}
           <li onClick={() => setDarkMode(!darkMode)} className="pt-10">
             {darkMode ? (
-              <DayNightToggle
-              checked={darkMode}
-              size={24}
-            />
+              <DayNightToggle checked={darkMode} size={24} />
             ) : (
-              <DayNightToggle
-              checked={darkMode}
-              size={24}
-            />
+              <DayNightToggle checked={darkMode} size={24} />
             )}
           </li>
         </ul>
