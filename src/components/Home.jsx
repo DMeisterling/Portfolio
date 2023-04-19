@@ -1,7 +1,7 @@
 import React from "react";
-import HeroImage from "../assets/heroImage.png";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
 import { Link } from "react-scroll";
+import HeroImage from "../assets/heroImage.png";
 
 const Home = () => {
   return (
@@ -11,7 +11,7 @@ const Home = () => {
     >
       <div className="mx-auto mb-auto flex flex-col items-center justify-center h-40 px-4 text-center pb-4">
         <h2 className="text-3xl sm:text-7xl md:text-7xl font-bold pb-2 px-2">
-          Daniel Meisterling
+          Tester Meisterling
         </h2>
         <h3 className="text-2xl sm:text-4xl md:text-6xl font-bold border-b-4 border-gray-500 pb-2 px-2">
           Software Developer
