@@ -1,4 +1,5 @@
 import React from "react";
+import noteTaskApp from "../assets/noteTaskApp.png";
 import portfolioProject from "../assets/portfolio-scroll.mp4";
 
 const Portfolio = () => {
@@ -10,6 +11,14 @@ const Portfolio = () => {
       srcVideo: true,
       demo: false,
       linkSrc: "https://github.com/DMeisterling/Portfolio",
+    },
+    {
+      name: "Note/Task-App",
+      id: 2,
+      src: noteTaskApp,
+      srcVideo: false,
+      demo: false,
+      linkSrc: "https://github.com/DMeisterling/note-app",
     },
   ];
 
