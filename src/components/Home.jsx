@@ -22,12 +22,12 @@ const Home = () => {
           <ul className="dark:text-gray-200 text-black p-4 list-disc">
             <li className="pt-4">
               <strong>Full-Stack Software-Developement</strong> mit{" "}
-              <strong className="underline">JavaScript</strong>,{" "}
-              <strong className="underline">Angular </strong>und
-              <strong className="underline"> TypeScript</strong>
+              <strong className="underline">Angular</strong>,{" "}
+              <strong className="underline">TypeScript </strong>und
+              <strong className="underline"> JavaScript </strong>
             </li>
             <li className="pt-3">
-              API-Aufrufe für REST-APIs via{" "}
+              Testing von API-Aufrufen für REST-APIs via{" "}
               <strong className="underline">Postman </strong>
             </li>
             <li className="pt-3">
@@ -36,23 +36,49 @@ const Home = () => {
               <strong className="underline">PostgreSQL </strong>
             </li>
             <li className="pt-3">
-              Testing und Dokumentation von neuen Funktionen via{" "}
-              <strong className="underline">PHPUnit </strong>
-            </li>
-            <li className="pt-3">
               Versionierungskontrolle mit zyklischen Releases
             </li>
             <li className="pt-3">
-              Pluginaktualisierung für eine Authentifizierung mit LDAP
+              Code- und Designanpassungen in{" "}
+              <strong className="underline">kundenorientierten </strong>
+              Lösungsansätzen
             </li>
             <li className="pt-3">
               Agile Coding mit <strong className="underline">Scrum-</strong>
               Methoden und Sprints
             </li>
             <li className="pt-3">
-              Code- und Designanpassungen in{" "}
-              <strong className="underline">kundenorientierten </strong>
-              Lösungsansätzen
+              Pluginaktualisierung für eine Authentifizierung mit LDAP
+            </li>
+            <li className="pt-3">
+              Testing und Dokumentation von neuen Funktionen via{" "}
+              <strong className="underline">PHPUnit </strong>
+            </li>
+          </ul>
+          <h1 className="text-xl sm:text-2xl md:text-3xl font-bold border-gray-500 pt-2 px-2">
+            Aktuelle Tasks und Milestones:
+          </h1>
+          <ul className="dark:text-gray-200 text-black p-4 list-disc">
+            <li className="pt-3">
+              Pflege von alten und Entwicklung von neuen Features für ein
+              umfangreiches <strong className="underline">SRM-System </strong>
+              <li className="pt-3">
+                Entwicklung eines{" "}
+                <strong className="underline">Wizards </strong>
+                für nutzerfreundliches Leiten durch Tasks
+              </li>
+              <li className="pt-3">
+                Erweiterung des Loginverfahrens um eine{" "}
+                <strong className="underline">
+                  SingleSignOn-Funktionalität{" "}
+                </strong>
+                für einen persistenten Login über alle Anwendungen des Systems
+              </li>
+              <li className="pt-3">
+                Aktualisierung von{" "}
+                <strong className="underline">Bootstrap </strong>
+                für alle Anwendungen von 3.x auf 5.x
+              </li>
             </li>
           </ul>
           <div className="flex justify-center">

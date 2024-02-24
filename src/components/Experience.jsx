@@ -1,7 +1,7 @@
 import React from "react";
 import angular from "../assets/angular.png";
 import css from "../assets/css.png";
-import github from "../assets/github.png";
+import git from "../assets/git.png";
 import html from "../assets/html.png";
 import javascript from "../assets/javascript.png";
 import linux from "../assets/linux.png";
@@ -40,14 +40,14 @@ const Experience = () => {
       src: reactImage,
       title: "React",
       style: "shadow-blue-600",
-      experience: "bg-60%",
+      experience: "bg-40%",
     },
     {
       id: 5,
       src: tailwind,
       title: "Tailwind",
       style: "shadow-sky-400",
-      experience: "bg-60%",
+      experience: "bg-40%",
     },
     {
       id: 6,
@@ -58,8 +58,8 @@ const Experience = () => {
     },
     {
       id: 7,
-      src: github,
-      title: "Github",
+      src: git,
+      title: "Git",
       style: "shadow-gray-400",
       experience: "bg-60%",
     },
@@ -68,21 +68,21 @@ const Experience = () => {
       src: php,
       title: "Php",
       style: "shadow-violet-500",
-      experience: "bg-40%",
+      experience: "bg-20%",
     },
     {
       id: 9,
       src: angular,
       title: "Angular",
       style: "shadow-red-500",
-      experience: "bg-40%",
+      experience: "bg-80%",
     },
     {
       id: 10,
       src: typescript,
       title: "TypeScript",
       style: "shadow-blue-500",
-      experience: "bg-40%",
+      experience: "bg-60%",
     },
     {
       id: 11,

@@ -13,28 +13,31 @@ const About = () => {
           </p>
         </div>
         <p className="text-xl mt-20">
-          Hallo! Ich bin Daniel Meisterling, 25 Jahre jung und Software
+          Hallo! Ich bin Daniel Meisterling, 26 Jahre jung und Software
           Developer.
         </p>
         <br />
         <p className="text-xl">
-          Ich habe zuletzt als Anwendungsentwickler gearbeitet. Zu meinem
-          Arbeitsalltag gehörten neben dem Programmieren im Frontend als auch im
-          Backend auch die Verwaltung von Servern und Datenbanken, der Support
-          von Kunden per Anfragen und Dokumentation von Änderungen und
-          Anleitungen. Die Erfassung von Anforderungen von Kunden und
-          Abteilungen sowie die Fehleranalyse und Behebung von Fehlern waren
-          auch Teil meiner Tätigkeit.
+          Mein Tätigkeitsbereich erstreckt sich über die Entwicklung von
+          Frontend- und Backend-Lösungen sowie die Administration und
+          Konfiguration von Applikationen auf Kundenservern und den zugehörigen
+          Datenbanken. Zusätzlich dazu kümmere ich mich um die Betreuung von
+          Kundenanfragen und verfasse präzise Dokumentationen. Die Erfassung,
+          Analyse und Behebung von Kundenanforderungen und Fehlern gehören
+          ebenfalls zu meinen zentralen Aufgaben.
         </p>
         <br />
         <p className="text-xl">
-          Nach nun über 3&nbsp;
+          Ich habe nun bereits über 4&nbsp;
           <span className="font-extrabold underline">
-            Jahren Berufserfahrung als Anwendungsentwickler{" "}
+            Jahre Berufserfahrung als Anwendungsentwickler
           </span>
-          möchte ich meine neuen Kenntnisse und Fähigkeiten nutzen und mich
-          weiterentwickeln. Schreiben Sie mir gerne eine Email oder nutzen Sie
-          das Kontaktformular weiter unten!
+          .
+          <br />
+          <span>
+            Schreiben Sie mir gerne eine Email oder nutzen Sie das
+            Kontaktformular weiter unten!
+          </span>
         </p>
       </div>
     </div>
