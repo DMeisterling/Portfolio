@@ -8,7 +8,6 @@ import linux from "../assets/linux.png";
 import csharp from "../assets/csharp.png";
 import mssql from "../assets/mssql.png";
 import nextjs from "../assets/nextjs.png";
-import php from "../assets/php.png";
 import reactImage from "../assets/react.png";
 import tailwind from "../assets/tailwind.png";
 import typescript from "../assets/typescript.png";
@@ -64,13 +63,6 @@ const Experience = () => {
       style: "shadow-gray-400",
       experience: "bg-60%",
     },
-    // {
-    //   id: 8,
-    //   src: php,
-    //   title: "Php",
-    //   style: "shadow-violet-500",
-    //   experience: "bg-20%",
-    // },
     {
       id: 9,
       src: angular,
