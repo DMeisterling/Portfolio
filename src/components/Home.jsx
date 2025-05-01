@@ -74,10 +74,19 @@ const Home = () => {
                 </strong>
                 für einen persistenten Login über alle Anwendungen des Systems
               </li>
-              <li className="pt-3">
+              <li className="pt-3"> 
                 Aktualisierung von{" "}
                 <strong className="underline">Bootstrap </strong>
                 für alle Anwendungen von 3.x auf 5.x
+              </li>
+              <li className="pt-3"> 
+                Entwicklung einer {" "}
+                <strong className="underline">E-Procurement-Lösung </strong>
+                in Form eines Webshops
+              </li>
+              <li className="pt-3"> 
+                Austauschen einer komplexen Tabellenkomponente zur Verbesserung von{" "}
+                <strong className="underline">Wartbarkeit und Benutzererfahrung </strong>
               </li>
             </li>
           </ul>

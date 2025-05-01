@@ -13,7 +13,7 @@ const About = () => {
           </p>
         </div>
         <p className="text-xl mt-20">
-          Hallo! Ich bin Daniel Meisterling, 26 Jahre jung und Software
+          Hallo! Ich bin Daniel Meisterling, 27 Jahre jung und Software
           Developer.
         </p>
         <br />

@@ -5,6 +5,7 @@ import git from "../assets/git.png";
 import html from "../assets/html.png";
 import javascript from "../assets/javascript.png";
 import linux from "../assets/linux.png";
+import csharp from "../assets/csharp.png";
 import mssql from "../assets/mssql.png";
 import nextjs from "../assets/nextjs.png";
 import php from "../assets/php.png";
@@ -40,7 +41,7 @@ const Experience = () => {
       src: reactImage,
       title: "React",
       style: "shadow-blue-600",
-      experience: "bg-40%",
+      experience: "bg-20%",
     },
     {
       id: 5,
@@ -54,7 +55,7 @@ const Experience = () => {
       src: nextjs,
       title: "Next JS",
       style: "shadow-white",
-      experience: "bg-40%",
+      experience: "bg-20%",
     },
     {
       id: 7,
@@ -63,13 +64,13 @@ const Experience = () => {
       style: "shadow-gray-400",
       experience: "bg-60%",
     },
-    {
-      id: 8,
-      src: php,
-      title: "Php",
-      style: "shadow-violet-500",
-      experience: "bg-20%",
-    },
+    // {
+    //   id: 8,
+    //   src: php,
+    //   title: "Php",
+    //   style: "shadow-violet-500",
+    //   experience: "bg-20%",
+    // },
     {
       id: 9,
       src: angular,
@@ -98,16 +99,23 @@ const Experience = () => {
       style: "shadow-yellow-200",
       experience: "bg-20%",
     },
+    {
+      id: 12,
+      src: csharp,
+      title: ".NET / C#",
+      style: "shadow-violet-500",
+      experience: "bg-60%",
+    },
   ];
 
-  // sort by name
+  // sort by experience
   techs.sort((a, b) => {
-    const nameA = a.experience.toUpperCase(); // ignore upper and lowercase
-    const nameB = b.experience.toUpperCase(); // ignore upper and lowercase
-    if (nameA < nameB) {
+    const experienceA = a.experience.toUpperCase(); // ignore upper and lowercase
+    const experienceB = b.experience.toUpperCase(); // ignore upper and lowercase
+    if (experienceA < experienceB) {
       return 1;
     }
-    if (nameA > nameB) {
+    if (experienceA > experienceB) {
       return -1;
     }
     // names must be equal
