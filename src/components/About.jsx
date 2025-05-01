@@ -28,7 +28,7 @@ const About = () => {
         </p>
         <br />
         <p className="text-xl">
-          Ich habe nun bereits über 4&nbsp;
+          Ich habe nun bereits über 5&nbsp;
           <span className="font-extrabold underline">
             Jahre Berufserfahrung als Anwendungsentwickler
           </span>
