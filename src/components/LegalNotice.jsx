@@ -29,7 +29,7 @@ const LegalNotice = () => {
           <p className="pt-2">
             {t.legal.phone}: +49 173 8419767
             <br />
-            {t.legal.email}: dan-meisterling@t-online.de
+            {t.legal.email}: danielmeisterling@googlemail.com
           </p>
 
           <p>

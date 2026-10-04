@@ -48,8 +48,8 @@ const Home = () => {
             src={heroImage}
             alt={hero.portraitAlt}
             width="800"
-            height="596"
-            className="h-40 w-40 rounded-full object-cover object-top shadow-lg ring-4 ring-emerald-500/40 sm:h-56 sm:w-56 md:h-72 md:w-72"
+            height="800"
+            className="h-40 w-40 rounded-full object-cover shadow-lg ring-4 ring-emerald-500/40 sm:h-56 sm:w-56 md:h-72 md:w-72"
           />
         </div>
 

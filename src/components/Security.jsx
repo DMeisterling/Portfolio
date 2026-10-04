@@ -159,7 +159,7 @@ const Security = () => {
         <p className="pSec">
           Telefon: +49 1738419767
           <br />
-          E-Mail: dan-meisterling@t-online.de
+          E-Mail: danielmeisterling@googlemail.com
         </p>
         <p className="pSec">
           Verantwortliche Stelle ist die nat&uuml;rliche oder juristische
