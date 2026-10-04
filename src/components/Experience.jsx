@@ -1,145 +1,59 @@
 import React from "react";
-import angular from "../assets/angular.png";
-import css from "../assets/css.png";
-import git from "../assets/git.png";
-import html from "../assets/html.png";
-import javascript from "../assets/javascript.png";
-import linux from "../assets/linux.png";
-import csharp from "../assets/csharp.png";
-import mssql from "../assets/mssql.png";
-import nextjs from "../assets/nextjs.png";
-import reactImage from "../assets/react.png";
-import tailwind from "../assets/tailwind.png";
-import typescript from "../assets/typescript.png";
+import { FiCheck } from "react-icons/fi";
+import { experience } from "../data/profile";
+import Section from "./Section";
 
 const Experience = () => {
-  const techs = [
-    {
-      id: 1,
-      src: html,
-      title: "HTML",
-      style: "shadow-orange-500",
-      experience: "bg-80%",
-    },
-    {
-      id: 2,
-      src: css,
-      title: "CSS",
-      style: "shadow-blue-500",
-      experience: "bg-80%",
-    },
-    {
-      id: 3,
-      src: javascript,
-      title: "JavaScript",
-      style: "shadow-yellow-500",
-      experience: "bg-80%",
-    },
-    {
-      id: 4,
-      src: reactImage,
-      title: "React",
-      style: "shadow-blue-600",
-      experience: "bg-20%",
-    },
-    {
-      id: 5,
-      src: tailwind,
-      title: "Tailwind",
-      style: "shadow-sky-400",
-      experience: "bg-40%",
-    },
-    {
-      id: 6,
-      src: nextjs,
-      title: "Next JS",
-      style: "shadow-white",
-      experience: "bg-20%",
-    },
-    {
-      id: 7,
-      src: git,
-      title: "Git",
-      style: "shadow-gray-400",
-      experience: "bg-60%",
-    },
-    {
-      id: 9,
-      src: angular,
-      title: "Angular",
-      style: "shadow-red-500",
-      experience: "bg-80%",
-    },
-    {
-      id: 10,
-      src: typescript,
-      title: "TypeScript",
-      style: "shadow-blue-500",
-      experience: "bg-60%",
-    },
-    {
-      id: 11,
-      src: mssql,
-      title: "MSSQL",
-      style: "shadow-gray-500",
-      experience: "bg-60%",
-    },
-    {
-      id: 12,
-      src: linux,
-      title: "Linux",
-      style: "shadow-yellow-200",
-      experience: "bg-20%",
-    },
-    {
-      id: 12,
-      src: csharp,
-      title: ".NET / C#",
-      style: "shadow-violet-500",
-      experience: "bg-60%",
-    },
-  ];
-
-  // sort by experience
-  techs.sort((a, b) => {
-    const experienceA = a.experience.toUpperCase(); // ignore upper and lowercase
-    const experienceB = b.experience.toUpperCase(); // ignore upper and lowercase
-    if (experienceA < experienceB) {
-      return 1;
-    }
-    if (experienceA > experienceB) {
-      return -1;
-    }
-    // names must be equal
-    return 0;
-  });
+  const [current, ...previous] = experience;
 
   return (
-    <div
-      name="erfahrung"
-      className="w-full dark:bg-gradient-to-b dark:from-gray-900 dark:via-dark-emerald dark:to-gray-900 bg-gradient-to-b  from-slate-200 via-slate-300 to-slate-200"
+    <Section
+      id="erfahrung"
+      eyebrow="Berufserfahrung"
+      title="Technische Verantwortung für ein B2B-SaaS-Produkt"
+      className="section-bg"
     >
-      <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full h-full ">
-        <div>
-          <p className="text-4xl font-bold border-b-4 border-gray-500 inline">
-            Erfahrung
-          </p>
-          <p className="py-6">Meine Skills</p>
+      <article className="card p-6 sm:p-8">
+        <div className="flex flex-col gap-2 sm:flex-row sm:items-start sm:justify-between">
+          <div>
+            <h3 className="text-xl font-bold sm:text-2xl">{current.role}</h3>
+            <p className="mt-1 font-semibold text-emerald-700 dark:text-emerald-400">
+              {current.company}
+            </p>
+          </div>
+          <span className="tag w-fit shrink-0">{current.period}</span>
         </div>
-
-        <div className="w-full grid grid-cols-2 sm:grid-cols-3 gap-8 text-center py-8 px-12 sm:px-0">
-          {techs.map(({ id, src, title, style, experience }) => (
-            <div
-              key={id}
-              className={`shadow-md hover:scale-105 duration-500 py-2 rounded-lg ${style} ${experience} bg-bottom bg-gradient-to-t from-slate-500 to-dark-emerald dark:from-transparent dark:to-slate-700 bg-no-repeat`}
-            >
-              <img src={src} alt="" className="w-20 mx-auto" />
-              <p className="mt-4 text-slate-800 dark:text-white">{title}</p>
-            </div>
+        <p className="mt-5 leading-relaxed text-gray-600 dark:text-gray-300">
+          {current.summary}
+        </p>
+        <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+          {current.responsibilities.map((item) => (
+            <li key={item} className="flex gap-2.5">
+              <FiCheck
+                aria-hidden="true"
+                className="mt-1 shrink-0 text-emerald-600 dark:text-emerald-400"
+              />
+              <span>{item}</span>
+            </li>
           ))}
-        </div>
-      </div>
-    </div>
+        </ul>
+      </article>
+
+      <ol className="mt-8 border-l-2 border-slate-300 dark:border-gray-700">
+        {previous.map(({ company, role, period, summary }) => (
+          <li key={company} className="relative pb-6 pl-6 last:pb-0">
+            <span className="absolute -left-[7px] top-1.5 h-3 w-3 rounded-full bg-slate-400 dark:bg-gray-600" />
+            <div className="flex flex-col sm:flex-row sm:items-baseline sm:gap-3">
+              <h3 className="font-bold">{role}</h3>
+              <span className="text-sm text-gray-600 dark:text-gray-400">
+                {company} · {period}
+              </span>
+            </div>
+            <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">{summary}</p>
+          </li>
+        ))}
+      </ol>
+    </Section>
   );
 };
 

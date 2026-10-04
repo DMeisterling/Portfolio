@@ -1,130 +1,94 @@
-import React, { useState } from "react";
-import DayNightToggle from "react-day-and-night-toggle";
+import React, { useEffect, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
-import { useNavigate } from "react-router-dom";
-import { Link } from "react-scroll";
+import { FiMoon, FiSun } from "react-icons/fi";
+import { Link as RouterLink, useLocation } from "react-router-dom";
+import { sections } from "../data/profile";
+import ScrollLink from "./ScrollLink";
+
+const ThemeToggle = ({ darkMode, setDarkMode }) => (
+  <button
+    type="button"
+    onClick={() => setDarkMode(!darkMode)}
+    aria-label={darkMode ? "Hellen Modus aktivieren" : "Dunklen Modus aktivieren"}
+    className="rounded-md p-2 text-gray-700 transition hover:text-emerald-600 dark:text-gray-300 dark:hover:text-emerald-400"
+  >
+    {darkMode ? <FiSun size={20} /> : <FiMoon size={20} />}
+  </button>
+);
 
 const NavBar = ({ darkMode, setDarkMode }) => {
-  const [nav, setNav] = useState(false);
-  const navigate = useNavigate();
+  const [menuOpen, setMenuOpen] = useState(false);
+  const { pathname } = useLocation();
+  const onHome = pathname === "/";
 
-  window
-    .matchMedia("(orientation: portrait)")
-    .addEventListener("change", (e) => {
-      setNav(false);
-    });
+  useEffect(() => {
+    const desktop = window.matchMedia("(min-width: 768px)");
+    const close = (event) => event.matches && setMenuOpen(false);
+    desktop.addEventListener("change", close);
+    return () => desktop.removeEventListener("change", close);
+  }, []);
 
-  const links = [
-    {
-      id: 1,
-      link: "home",
-    },
-    {
-      id: 2,
-      link: "über mich",
-    },
-    {
-      id: 3,
-      link: "projekte",
-    },
-    {
-      id: 4,
-      link: "erfahrung",
-    },
-    {
-      id: 5,
-      link: "kontakt",
-    },
-  ];
+  useEffect(() => setMenuOpen(false), [pathname]);
+
+  const navLinks = sections.filter(({ id }) => id !== "home");
+
+  const renderLink = ({ id, label }, className) =>
+    onHome ? (
+      <ScrollLink
+        to={id}
+        spy
+        activeClass="active"
+        className={className}
+        onClick={() => setMenuOpen(false)}
+      >
+        {label}
+      </ScrollLink>
+    ) : (
+      <RouterLink to={`/#${id}`} className={className}>
+        {label}
+      </RouterLink>
+    );
 
   return (
-    <div className="flex flex-col ontop justify-between items-center w-full h-12 px-3 pt-2 text-gray-900 bg-slate-200 dark:text-white dark:bg-gray-900 fixed border-b-4 border-emerald-500">
-      <ul className="hidden landscape:flex md:flex justify-center items-center">
-        {links.map(({ id, link }) => (
-          <li
-            key={id}
-            className="px-3 cursor-pointer capitalize font-bold dark:text-white hover:scale-105 duration-200 text-xl"
+    <header className="fixed inset-x-0 top-0 z-50 border-b-2 border-emerald-500 bg-slate-200/90 backdrop-blur dark:bg-gray-900/90">
+      <nav className="mx-auto flex h-16 max-w-screen-lg items-center justify-between px-4">
+        {renderLink({ id: "home", label: "Daniel Meisterling" }, "text-lg font-extrabold tracking-tight")}
+
+        <div className="hidden items-center gap-6 md:flex">
+          <ul className="flex items-center gap-6">
+            {navLinks.map((section) => (
+              <li key={section.id}>{renderLink(section, "nav-link")}</li>
+            ))}
+          </ul>
+          <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
+        </div>
+
+        <div className="flex items-center gap-1 md:hidden">
+          <ThemeToggle darkMode={darkMode} setDarkMode={setDarkMode} />
+          <button
+            type="button"
+            onClick={() => setMenuOpen(!menuOpen)}
+            aria-label={menuOpen ? "Menü schließen" : "Menü öffnen"}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-menu"
+            className="rounded-md p-2 text-gray-700 dark:text-gray-300"
           >
-            {window.location.pathname === "/Impressum" ||
-            window.location.pathname === "/Datenschutz" ? (
-              <button
-                onClick={() => navigate("/")}
-                className="cursor-pointer capitalize font-bold text-white hover:scale-105 duration-200 text-xl"
-              >
-                {link}
-              </button>
-            ) : (
-              <Link
-                onClick={() => setNav(false)}
-                to={link}
-                activeClass="active"
-                spy={true}
-                smooth
-                duration={500}
-                offset={-100}
-              >
-                {link}
-              </Link>
-            )}
-          </li>
-        ))}
-        <li
-          onClick={() => setDarkMode(!darkMode)}
-          className="ml-8 w-fit cursor-pointer"
+            {menuOpen ? <FaTimes size={22} /> : <FaBars size={22} />}
+          </button>
+        </div>
+      </nav>
+
+      {menuOpen && (
+        <ul
+          id="mobile-menu"
+          className="flex h-[calc(100dvh-4rem)] flex-col items-center justify-center gap-8 border-t border-slate-300 bg-slate-200 text-xl font-semibold dark:border-gray-800 dark:bg-gray-900 md:hidden"
         >
-          {darkMode ? (
-            <DayNightToggle checked={darkMode} size={24} />
-          ) : (
-            <DayNightToggle checked={darkMode} size={24} />
-          )}
-        </li>
-      </ul>
-
-      <div
-        onClick={() => setNav(!nav)}
-        className="cursor-pointer z-10 text-gray-500 landscape:hidden md:hidden"
-      >
-        {nav ? <FaTimes size={30} /> : <FaBars size={30} />}
-      </div>
-
-      {nav && (
-        <ul className="flex flex-col justify-center items-center absolute top-0 left-0 w-full h-screen min-h-screen vh-100 px-3 cursor-pointer capitalize font-bold dark:text-white text-xl dark:bg-gradient-to-b dark:from-gray-900 dark:to-green-900 bg-gradient-to-b  from-slate-200 via-slate-400 to-slate-500">
-          {links.map(({ id, link }) => (
-            <li key={id} className="px-4 cursor-pointer capitalize text-xl">
-              {window.location.pathname === "/Impressum" ||
-              window.location.pathname === "/Datenschutz" ? (
-                <button
-                  onClick={() => {
-                    navigate("/");
-                    setNav(!nav);
-                  }}
-                  className="cursor-pointer capitalize font-bold text-white hover:scale-105 duration-200 text-xl"
-                >
-                  {link}
-                </button>
-              ) : (
-                <Link
-                  onClick={() => setNav(!nav)}
-                  to={link}
-                  smooth
-                  duration={500}
-                  offset={-100}
-                >
-                  {link}
-                </Link>
-              )}
-            </li>
+          {navLinks.map((section) => (
+            <li key={section.id}>{renderLink(section, "cursor-pointer")}</li>
           ))}
-          <li onClick={() => setDarkMode(!darkMode)} className="pt-10">
-            {darkMode ? (
-              <DayNightToggle checked={darkMode} size={24} />
-            ) : (
-              <DayNightToggle checked={darkMode} size={24} />
-            )}
-          </li>
         </ul>
       )}
-    </div>
+    </header>
   );
 };
 

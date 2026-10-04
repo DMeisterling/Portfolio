@@ -3,11 +3,8 @@ import "../secStyle.css";
 
 const Security = () => {
   return (
-    <div
-      name="datenschutz"
-      className="h-full w-full dark:bg-gradient-to-b dark:from-gray-900 dark:to-dark-emerald bg-gradient-to-b  from-slate-200 to-slate-200 mt-10"
-    >
-      <div className="mx-auto flex flex-col justify-center h-full px-4">
+    <section className="section-bg w-full px-4 pb-16 pt-28 sm:pt-32">
+      <div className="mx-auto max-w-screen-md break-words">
         <h1 className="h1sec">Datenschutz&shy;erkl&auml;rung</h1>
         <h2 className="h2sec">1. Datenschutz auf einen Blick</h2>
         <h3 className="h3sec">Allgemeine Hinweise</h3>{" "}
@@ -297,7 +294,7 @@ const Security = () => {
           jederzeit an uns wenden. Das Recht auf Einschr&auml;nkung der
           Verarbeitung besteht in folgenden F&auml;llen:
         </p>{" "}
-        <ul>
+        <ul className="pSec list-disc space-y-2 pl-6">
           {" "}
           <li>
             Wenn Sie die Richtigkeit Ihrer bei uns gespeicherten
@@ -444,7 +441,7 @@ const Security = () => {
           <a href="https://www.e-recht24.de">https://www.e-recht24.de</a>
         </p>
       </div>
-    </div>
+    </section>
   );
 };
 

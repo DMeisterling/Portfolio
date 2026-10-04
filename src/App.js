@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Experience from "./components/Experience";
@@ -8,52 +8,56 @@ import Home from "./components/Home";
 import LegalNotice from "./components/LegalNotice";
 import NavBar from "./components/NavBar";
 import Portfolio from "./components/Portfolio";
+import { scrollToSection } from "./components/ScrollLink";
 import Security from "./components/Security";
-import SocialLinks from "./components/SocialLinks";
+import TechFocus from "./components/TechFocus";
+
+const ScrollManager = () => {
+  const { pathname, hash } = useLocation();
+
+  useEffect(() => {
+    if (hash) {
+      scrollToSection(decodeURIComponent(hash.slice(1)));
+    } else {
+      window.scrollTo(0, 0);
+    }
+  }, [pathname, hash]);
+
+  return null;
+};
 
 function App() {
   const [darkMode, setDarkMode] = useState(true);
-  <title>Daniel Meisterling</title>;
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", darkMode);
+  }, [darkMode]);
+
   return (
-    <div className={darkMode && "dark"}>
-      <BrowserRouter>
-        <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
-        <main className="bg-slate-200 dark:bg-gray-900 text-gray-900 font-bold dark:text-white">
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <>
-                  <Home />
-                  <About />
-                  <Portfolio />
-                  <Experience />
-                  <Contact />
-                  <SocialLinks />
-                  <Footer />
-                </>
-              }
-            />
-            <Route
-              path="/Impressum"
-              element={
-                <>
-                  <LegalNotice />
-                </>
-              }
-            />
-            <Route
-              path="/Datenschutz"
-              element={
-                <>
-                  <Security />
-                </>
-              }
-            />
-          </Routes>
-        </main>
-      </BrowserRouter>
-    </div>
+    <BrowserRouter>
+      <ScrollManager />
+      <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
+      <main>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Home />
+                <Portfolio />
+                <Experience />
+                <TechFocus />
+                <About />
+                <Contact />
+              </>
+            }
+          />
+          <Route path="/Impressum" element={<LegalNotice />} />
+          <Route path="/Datenschutz" element={<Security />} />
+        </Routes>
+      </main>
+      <Footer />
+    </BrowserRouter>
   );
 }
 

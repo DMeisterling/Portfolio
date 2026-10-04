@@ -1,19 +1,45 @@
 import React from "react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { HiOutlineMail } from "react-icons/hi";
 import { Link } from "react-router-dom";
+import { contact } from "../data/profile";
+
+const socials = [
+  { label: "LinkedIn", href: contact.linkedin, icon: FaLinkedin },
+  { label: "GitHub", href: contact.github, icon: FaGithub },
+  { label: "E-Mail", href: `mailto:${contact.email}`, icon: HiOutlineMail },
+];
 
 const Footer = () => {
   return (
-    <section className="min-h-fit flex flex-col justify-start items-center py-16 px-5 text-center dark:bg-gradient-to-b dark:from-gray-900 dark:to-dark-emerald bg-gradient-to-b  from-slate-200 via-slate-400 to-slate-500">
-      <p className="max-w-xl font-bold text-gray-900 dark:text-gray-500 mb-10">
-        © 2024 Daniel Meisterling
-      </p>
-      <Link to="/Impressum" title="Impressum">
-        Impressum
-      </Link>
-      <Link to="/Datenschutz" title="Datenschutz">
-        Datenschutz
-      </Link>
-    </section>
+    <footer className="border-t border-slate-300 px-4 py-10 dark:border-gray-800">
+      <div className="mx-auto flex max-w-screen-lg flex-col items-center gap-6 text-sm text-gray-600 dark:text-gray-400 sm:flex-row sm:justify-between">
+        <p>© {new Date().getFullYear()} Daniel Meisterling</p>
+        <ul className="flex gap-5">
+          {socials.map(({ label, href, icon: Icon }) => (
+            <li key={label}>
+              <a
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={label}
+                className="transition hover:text-emerald-600 dark:hover:text-emerald-400"
+              >
+                <Icon size={20} aria-hidden="true" />
+              </a>
+            </li>
+          ))}
+        </ul>
+        <nav className="flex gap-5" aria-label="Rechtliches">
+          <Link to="/Impressum" className="hover:text-emerald-600 dark:hover:text-emerald-400">
+            Impressum
+          </Link>
+          <Link to="/Datenschutz" className="hover:text-emerald-600 dark:hover:text-emerald-400">
+            Datenschutz
+          </Link>
+        </nav>
+      </div>
+    </footer>
   );
 };
 

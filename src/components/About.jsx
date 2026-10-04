@@ -1,46 +1,64 @@
 import React from "react";
+import Section from "./Section";
+
+const strengths = [
+  {
+    title: "Frontend-Kompetenz",
+    text: "Angular, TypeScript und eine UI-Architektur, die auch bei komplexen Anwendungen wartbar bleibt.",
+  },
+  {
+    title: "Full-Stack-Erfahrung",
+    text: ".NET-APIs, SQL-Datenbanken und Integrationen – Features entstehen bei mir durchgängig.",
+  },
+  {
+    title: "Product Ownership",
+    text: "Anforderungen verstehen, Prioritäten setzen und eine Roadmap pragmatisch umsetzen.",
+  },
+  {
+    title: "Technische Verantwortung",
+    text: "Architektur, Security und Entwicklungsprozesse, die ein Produkt langfristig tragen.",
+  },
+];
 
 const About = () => {
   return (
-    <div
-      name="über mich"
-      className="w-full dark:bg-gradient-to-b dark:from-gray-900 dark:via-dark-emerald dark:to-gray-900 bg-gradient-to-b  from-slate-200 via-slate-300 to-slate-200"
+    <Section
+      id="ueber-mich"
+      eyebrow="Über mich"
+      title="Vollständige Anwendungen statt einzelner Tickets"
+      className="section-bg"
     >
-      <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full h-full">
-        <div className="pt-4">
-          <p className="text-4xl font-bold inline border-b-4 border-gray-500">
-            Über mich
+      <div className="grid gap-10 md:grid-cols-5">
+        <div className="space-y-4 leading-relaxed text-gray-700 dark:text-gray-300 md:col-span-3 sm:text-lg">
+          <p>
+            Ich bin Software Engineer mit klarem Schwerpunkt im Frontend und
+            fundierter Full-Stack-Erfahrung. Als Lead of Development bei der
+            Simmeth System GmbH verantworte ich die technische Weiterentwicklung
+            einer B2B-SaaS-Plattform – von Planung und Architektur bis zur
+            Umsetzung.
+          </p>
+          <p>
+            Mich interessieren vor allem vollständige, nutzbare Produkte. Ich
+            denke Anforderungen aus Produktsicht mit, treffe pragmatische
+            technische Entscheidungen und sorge dafür, dass Software zuverlässig
+            in Produktion läuft.
+          </p>
+          <p>
+            Neben dem Beruf entwickle und betreibe ich eigene Anwendungen wie
+            PoE Analyze und Fleissaufgabe – eigenständig von der Idee über
+            Design und Implementierung bis zu Deployment und Betrieb.
           </p>
         </div>
-        <p className="text-xl mt-20">
-          Hallo! Ich bin Daniel Meisterling, 27 Jahre jung und Software
-          Developer.
-        </p>
-        <br />
-        <p className="text-xl">
-          Mein Tätigkeitsbereich erstreckt sich über die Entwicklung von
-          Frontend- und Backend-Lösungen sowie die Administration und
-          Konfiguration von Applikationen auf Kundenservern und den zugehörigen
-          Datenbanken. Zusätzlich dazu kümmere ich mich um die Betreuung von
-          Kundenanfragen und verfasse präzise Dokumentationen. Die Erfassung,
-          Analyse und Behebung von Kundenanforderungen und Fehlern gehören
-          ebenfalls zu meinen zentralen Aufgaben.
-        </p>
-        <br />
-        <p className="text-xl">
-          Ich habe nun bereits über 5&nbsp;
-          <span className="font-extrabold underline">
-            Jahre Berufserfahrung als Anwendungsentwickler
-          </span>
-          .
-          <br />
-          <span>
-            Schreiben Sie mir gerne eine Email oder nutzen Sie das
-            Kontaktformular weiter unten!
-          </span>
-        </p>
+        <ul className="grid gap-4 sm:grid-cols-2 md:col-span-2 md:grid-cols-1">
+          {strengths.map(({ title, text }) => (
+            <li key={title} className="card p-5">
+              <h3 className="font-bold">{title}</h3>
+              <p className="mt-1 text-sm text-gray-600 dark:text-gray-400">{text}</p>
+            </li>
+          ))}
+        </ul>
       </div>
-    </div>
+    </Section>
   );
 };
 
