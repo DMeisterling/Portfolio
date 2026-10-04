@@ -3,24 +3,25 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { Link } from "react-router-dom";
 import { contact } from "../data/profile";
+import { useLanguage } from "../i18n/LanguageContext";
 import Section from "./Section";
 
 const channels = [
   {
-    label: "E-Mail",
+    id: "email",
     value: contact.email,
     href: `mailto:${contact.email}`,
     icon: HiOutlineMail,
   },
   {
-    label: "LinkedIn",
+    id: "linkedin",
     value: "daniel-meisterling",
     href: contact.linkedin,
     icon: FaLinkedin,
     external: true,
   },
   {
-    label: "GitHub",
+    id: "github",
     value: "DMeisterling",
     href: contact.github,
     icon: FaGithub,
@@ -32,34 +33,37 @@ const inputClass =
   "w-full rounded-md border border-gray-400 bg-white/70 px-3 py-2.5 text-gray-900 placeholder-gray-500 transition focus:border-emerald-500 focus:outline-none focus:ring-2 focus:ring-emerald-500/40 dark:border-gray-600 dark:bg-gray-800/60 dark:text-gray-100 dark:placeholder-gray-400";
 
 const Contact = () => {
+  const { t } = useLanguage();
+  const { form } = t.contact;
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    const form = event.target;
+    const formElement = event.target;
     const values = ["name", "email", "message"].map((field) =>
-      form.elements[field].value.trim()
+      formElement.elements[field].value.trim()
     );
     const emailPattern = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
 
     if (values.some((value) => value === "")) {
-      alert("Bitte alle Felder ausfüllen.");
+      alert(form.errorRequired);
     } else if (!emailPattern.test(values[1])) {
-      alert("Bitte eine gültige E-Mail-Adresse eingeben.");
+      alert(form.errorEmail);
     } else {
-      form.submit();
+      formElement.submit();
     }
   };
 
   return (
     <Section
       id="kontakt"
-      eyebrow="Kontakt"
-      title="Lassen Sie uns sprechen"
-      intro="Ob Projektanfrage, Austausch oder Feedback zu einem meiner Produkte – ich freue mich über Ihre Nachricht."
+      eyebrow={t.contact.eyebrow}
+      title={t.contact.title}
+      intro={t.contact.intro}
     >
       <div className="grid gap-10 md:grid-cols-5">
         <ul className="flex flex-col gap-3 md:col-span-2">
-          {channels.map(({ label, value, href, icon: Icon, external }) => (
-            <li key={label}>
+          {channels.map(({ id, value, href, icon: Icon, external }) => (
+            <li key={id}>
               <a
                 href={href}
                 {...(external && { target: "_blank", rel: "noreferrer" })}
@@ -67,7 +71,9 @@ const Contact = () => {
               >
                 <Icon size={22} aria-hidden="true" className="shrink-0 text-emerald-600 dark:text-emerald-400" />
                 <span className="min-w-0">
-                  <span className="block text-sm text-gray-600 dark:text-gray-400">{label}</span>
+                  <span className="block text-sm text-gray-600 dark:text-gray-400">
+                    {t.contact.channels[id]}
+                  </span>
                   <span className="block truncate font-semibold">{value}</span>
                 </span>
               </a>
@@ -84,28 +90,27 @@ const Contact = () => {
         >
           <div className="grid gap-4 sm:grid-cols-2">
             <label className="flex flex-col gap-1.5 text-sm font-semibold">
-              Name
+              {form.name}
               <input type="text" name="name" autoComplete="name" required className={inputClass} />
             </label>
             <label className="flex flex-col gap-1.5 text-sm font-semibold">
-              E-Mail
+              {form.email}
               <input type="email" name="email" autoComplete="email" required className={inputClass} />
             </label>
           </div>
           <label className="flex flex-col gap-1.5 text-sm font-semibold">
-            Nachricht
+            {form.message}
             <textarea name="message" rows="6" required className={inputClass} />
           </label>
           <p className="text-xs text-gray-600 dark:text-gray-400">
-            Ihre Angaben werden ausschließlich zur Bearbeitung Ihrer Anfrage
-            verwendet. Details finden Sie in der{" "}
+            {form.privacyBefore}
             <Link to="/Datenschutz" className="underline hover:text-emerald-600">
-              Datenschutzerklärung
+              {form.privacyLink}
             </Link>
-            .
+            {form.privacyAfter}
           </p>
           <button type="submit" className="btn-primary self-start">
-            Nachricht senden
+            {form.submit}
           </button>
         </form>
       </div>

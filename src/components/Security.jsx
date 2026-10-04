@@ -1,10 +1,18 @@
 import React from "react";
+import { useLanguage } from "../i18n/LanguageContext";
 import "../secStyle.css";
 
 const Security = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="section-bg w-full px-4 pb-16 pt-28 sm:pt-32">
-      <div className="mx-auto max-w-screen-md break-words">
+      <div className="mx-auto max-w-screen-md break-words" lang="de">
+        {t.legal.privacyNotice && (
+          <p lang="en" className="card mb-8 p-4 text-sm">
+            {t.legal.privacyNotice}
+          </p>
+        )}
         <h1 className="h1sec">Datenschutz&shy;erkl&auml;rung</h1>
         <h2 className="h2sec">1. Datenschutz auf einen Blick</h2>
         <h3 className="h3sec">Allgemeine Hinweise</h3>{" "}
@@ -205,7 +213,7 @@ const Security = () => {
         <p className="pSec">
           Wir verwenden unter anderem Tools von Unternehmen mit Sitz in den USA
           oder sonstigen datenschutzrechtlich nicht sicheren Drittstaaten. Wenn
-          diese Tools aktiv sind, k&ouml;nnen Ihre personenbezogene Daten in
+          diese Tools aktiv sind, k&ouml;nnen Ihre personenbezogenen Daten in
           diese Drittstaaten &uuml;bertragen und dort verarbeitet werden. Wir
           weisen darauf hin, dass in diesen L&auml;ndern kein mit der EU
           vergleichbares Datenschutzniveau garantiert werden kann.

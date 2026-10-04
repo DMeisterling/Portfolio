@@ -115,7 +115,7 @@ var klaroConfig = {
       privacyPolicyUrl: "/Datenschutz",
       consentModal: {
         description:
-          "Hier können Sie einsehen und anpassen, welche Information wir über Sie sammeln.",
+          "Hier können Sie einsehen und anpassen, welche Informationen wir über Sie sammeln.",
       },
       inlineTracker: {
         description: "Beispiel für ein Inline-Tracking Skript",

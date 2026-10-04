@@ -11,6 +11,7 @@ import Portfolio from "./components/Portfolio";
 import { scrollToSection } from "./components/ScrollLink";
 import Security from "./components/Security";
 import TechFocus from "./components/TechFocus";
+import { LanguageProvider } from "./i18n/LanguageContext";
 
 const ScrollManager = () => {
   const { pathname, hash } = useLocation();
@@ -34,30 +35,32 @@ function App() {
   }, [darkMode]);
 
   return (
-    <BrowserRouter>
-      <ScrollManager />
-      <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
-      <main>
-        <Routes>
-          <Route
-            path="/"
-            element={
-              <>
-                <Home />
-                <Portfolio />
-                <Experience />
-                <TechFocus />
-                <About />
-                <Contact />
-              </>
-            }
-          />
-          <Route path="/Impressum" element={<LegalNotice />} />
-          <Route path="/Datenschutz" element={<Security />} />
-        </Routes>
-      </main>
-      <Footer />
-    </BrowserRouter>
+    <LanguageProvider>
+      <BrowserRouter>
+        <ScrollManager />
+        <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
+        <main>
+          <Routes>
+            <Route
+              path="/"
+              element={
+                <>
+                  <Home />
+                  <Portfolio />
+                  <Experience />
+                  <TechFocus />
+                  <About />
+                  <Contact />
+                </>
+              }
+            />
+            <Route path="/Impressum" element={<LegalNotice />} />
+            <Route path="/Datenschutz" element={<Security />} />
+          </Routes>
+        </main>
+        <Footer />
+      </BrowserRouter>
+    </LanguageProvider>
   );
 }
 

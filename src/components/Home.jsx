@@ -3,36 +3,31 @@ import { FaLinkedin } from "react-icons/fa";
 import { FiArrowDown } from "react-icons/fi";
 import heroImage from "../assets/hero.jpg";
 import { contact } from "../data/profile";
+import { useLanguage } from "../i18n/LanguageContext";
 import ScrollLink from "./ScrollLink";
 
-const facts = [
-  { value: "Lead of Development", label: "B2B-SaaS bei Simmeth System" },
-  { value: "Seit 2019", label: "professionell in der Softwareentwicklung" },
-  { value: "2 eigene Produkte", label: "live und produktiv im Einsatz" },
-];
-
 const Home = () => {
+  const { t } = useLanguage();
+  const { hero } = t;
+
   return (
     <section id="home" className="section-bg w-full px-4 pb-16 pt-28 sm:pb-24 sm:pt-36">
       <div className="mx-auto max-w-screen-lg">
         <div className="flex flex-col-reverse items-center gap-10 md:flex-row md:gap-14">
           <div className="flex-1 text-center md:text-left">
-            <p className="eyebrow">Angular · TypeScript · .NET</p>
+            <p className="eyebrow">{hero.eyebrow}</p>
             <h1 className="mt-4 text-4xl font-extrabold tracking-tight sm:text-6xl">
               Daniel Meisterling
             </h1>
             <p className="mt-3 text-xl font-semibold text-gray-700 dark:text-gray-200 sm:text-2xl">
-              Frontend-fokussierter Full-Stack Engineer
+              {hero.subtitle}
             </p>
             <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-gray-600 dark:text-gray-300 sm:text-lg md:mx-0">
-              Ich entwickle moderne Webanwendungen mit Angular, TypeScript und
-              .NET und übernehme technische Verantwortung von der Idee bis zum
-              produktiven Betrieb – mit Fokus auf SaaS-Produkte, tragfähige
-              Architektur und produktionsreife Software.
+              {hero.intro}
             </p>
             <div className="mt-8 flex flex-wrap justify-center gap-3 md:justify-start">
               <ScrollLink to="projekte" className="btn-primary">
-                Projekte ansehen
+                {hero.ctaProjects}
                 <FiArrowDown aria-hidden="true" />
               </ScrollLink>
               <a
@@ -45,13 +40,13 @@ const Home = () => {
                 LinkedIn
               </a>
               <ScrollLink to="kontakt" className="btn-secondary">
-                Kontakt
+                {hero.ctaContact}
               </ScrollLink>
             </div>
           </div>
           <img
             src={heroImage}
-            alt="Porträt von Daniel Meisterling"
+            alt={hero.portraitAlt}
             width="800"
             height="596"
             className="h-40 w-40 rounded-full object-cover object-top shadow-lg ring-4 ring-emerald-500/40 sm:h-56 sm:w-56 md:h-72 md:w-72"
@@ -59,7 +54,7 @@ const Home = () => {
         </div>
 
         <dl className="mt-14 grid gap-4 sm:grid-cols-3">
-          {facts.map(({ value, label }) => (
+          {hero.facts.map(({ value, label }) => (
             <div key={value} className="card flex flex-col px-5 py-4 text-center md:text-left">
               <dt className="text-sm text-gray-600 dark:text-gray-400">{label}</dt>
               <dd className="order-first text-lg font-bold">{value}</dd>

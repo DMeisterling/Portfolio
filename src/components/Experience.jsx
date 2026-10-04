@@ -1,16 +1,17 @@
 import React from "react";
 import { FiCheck } from "react-icons/fi";
-import { experience } from "../data/profile";
+import { useLanguage } from "../i18n/LanguageContext";
 import Section from "./Section";
 
 const Experience = () => {
-  const [current, ...previous] = experience;
+  const { t } = useLanguage();
+  const { current, previous } = t.experience;
 
   return (
     <Section
       id="erfahrung"
-      eyebrow="Berufserfahrung"
-      title="Technische Verantwortung für ein B2B-SaaS-Produkt"
+      eyebrow={t.experience.eyebrow}
+      title={t.experience.title}
       className="section-bg"
     >
       <article className="card p-6 sm:p-8">

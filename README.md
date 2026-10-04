@@ -18,9 +18,11 @@ npx eslint "src/**/*.{js,jsx}"     # Linting
 
 ## Inhalte pflegen
 
-Alle Inhalte (Projekte, Berufserfahrung, Tech-Fokus, Kontaktdaten, Navigation) liegen zentral in
-`src/data/profile.js`. Komponenten unter `src/components/` rendern nur.
+Die Seite ist zweisprachig (Deutsch/Englisch, Umschalter in der Navigation, Auswahl wird im `localStorage` gespeichert; Standard ist Deutsch).
 
+- **Texte:** `src/i18n/de.js` und `src/i18n/en.js` – beide Dateien müssen dieselbe Struktur haben (wird per Test geprüft).
+- **Sprachneutrale Daten** (Links, Screenshots, Tech-Stacks, Kontaktdaten): `src/data/profile.js`.
 - **Projekt-Screenshots:** `src/assets/projects/` (WebP, 1440×900). Fehlt ein Screenshot, zeigt die Karte einen Platzhalter.
 - **Technische Case Study:** `caseStudyUrl` am Projekt setzen – solange `null`, erscheint „Case Study in Vorbereitung“.
 - **SEO / Social Sharing:** Meta-Tags und JSON-LD in `public/index.html`, Vorschaubild `public/og-image.jpg` (1200×630).
+- **Datenschutzerklärung:** nur auf Deutsch; in der englischen Ansicht erscheint ein Hinweis darauf.

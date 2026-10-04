@@ -1,17 +1,11 @@
 import React from "react";
 import { FiCheck, FiExternalLink, FiFileText } from "react-icons/fi";
+import { useLanguage } from "../i18n/LanguageContext";
 
 const ProjectCard = ({ project, reversed }) => {
-  const {
-    name,
-    tagline,
-    url,
-    screenshot,
-    description,
-    highlights,
-    stack,
-    caseStudyUrl,
-  } = project;
+  const { t } = useLanguage();
+  const { id, name, url, screenshot, stack, caseStudyUrl } = project;
+  const { tagline, description, highlights } = t.projects.items[id];
   const host = new URL(url).host;
 
   return (
@@ -21,7 +15,7 @@ const ProjectCard = ({ project, reversed }) => {
           href={url}
           target="_blank"
           rel="noreferrer"
-          aria-label={`${name} live öffnen`}
+          aria-label={t.projects.openLive(name)}
           className={`group block bg-slate-300/50 p-4 dark:bg-gray-900/60 sm:p-6 ${
             reversed ? "lg:order-last" : ""
           }`}
@@ -38,7 +32,7 @@ const ProjectCard = ({ project, reversed }) => {
             {screenshot ? (
               <img
                 src={screenshot}
-                alt={`Screenshot von ${name}`}
+                alt={t.projects.screenshotAlt(name)}
                 width="1440"
                 height="900"
                 loading="lazy"
@@ -71,7 +65,7 @@ const ProjectCard = ({ project, reversed }) => {
             ))}
           </ul>
 
-          <ul className="mt-6 flex flex-wrap gap-2" aria-label="Technologien">
+          <ul className="mt-6 flex flex-wrap gap-2" aria-label={t.projects.technologies}>
             {stack.map((tech) => (
               <li key={tech} className="tag text-xs">
                 {tech}
@@ -81,18 +75,18 @@ const ProjectCard = ({ project, reversed }) => {
 
           <div className="mt-auto flex flex-wrap gap-3 pt-8">
             <a href={url} target="_blank" rel="noreferrer" className="btn-primary">
-              Live ansehen
+              {t.projects.live}
               <FiExternalLink aria-hidden="true" />
             </a>
             {caseStudyUrl ? (
               <a href={caseStudyUrl} className="btn-secondary">
                 <FiFileText aria-hidden="true" />
-                Technische Case Study
+                {t.projects.caseStudy}
               </a>
             ) : (
               <span className="btn cursor-default border border-dashed border-gray-400 text-gray-500 dark:border-gray-600 dark:text-gray-400">
                 <FiFileText aria-hidden="true" />
-                Case Study in Vorbereitung
+                {t.projects.caseStudyPending}
               </span>
             )}
           </div>

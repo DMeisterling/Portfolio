@@ -1,15 +1,18 @@
 import React from "react";
+import { useLanguage } from "../i18n/LanguageContext";
 
 const LegalNotice = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="section-bg w-full px-4 pb-16 pt-28 sm:pt-32">
       <div className="mx-auto max-w-screen-md break-words">
         <h1 className="text-3xl font-bold tracking-tight sm:text-5xl">
-          Impressum
+          {t.legal.imprintTitle}
         </h1>
         <div className="pt-8 text-lg leading-relaxed sm:text-xl">
           <h2 className="border-b-2 border-emerald-500 pb-2 font-bold">
-            Angaben gem&auml;&szlig; &sect; 5 TMG
+            {t.legal.imprintHeading}
           </h2>
           <br />
           <p>
@@ -20,15 +23,17 @@ const LegalNotice = () => {
             84489 Burghausen
           </p>
           <br />
-          <h2 className="border-b-2 border-emerald-500 pb-2 font-bold">Kontakt</h2>
+          <h2 className="border-b-2 border-emerald-500 pb-2 font-bold">
+            {t.legal.contactHeading}
+          </h2>
           <p className="pt-2">
-            Telefon: +49 173 8419767
+            {t.legal.phone}: +49 173 8419767
             <br />
-            E-Mail: dan-meisterling@t-online.de
+            {t.legal.email}: dan-meisterling@t-online.de
           </p>
 
           <p>
-            Quelle: &nbsp;
+            {t.legal.source}: &nbsp;
             <a
               href="https://www.e-recht24.de"
               className="border-b"

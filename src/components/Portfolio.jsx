@@ -1,15 +1,18 @@
 import React from "react";
 import { projects } from "../data/profile";
+import { useLanguage } from "../i18n/LanguageContext";
 import ProjectCard from "./ProjectCard";
 import Section from "./Section";
 
 const Portfolio = () => {
+  const { t } = useLanguage();
+
   return (
     <Section
       id="projekte"
-      eyebrow="Ausgewählte Projekte"
-      title="Eigene Produkte, live im Betrieb"
-      intro="Zwei Anwendungen, die ich eigenständig konzipiert, entwickelt und betreibe – von der Domänenmodellierung über UI und API bis zu Deployment und laufendem Betrieb."
+      eyebrow={t.projects.eyebrow}
+      title={t.projects.title}
+      intro={t.projects.intro}
     >
       <div className="flex flex-col gap-10">
         {projects.map((project, index) => (
