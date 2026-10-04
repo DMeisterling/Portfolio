@@ -1,5 +1,3 @@
-import React from "react";
-
 const Section = ({ id, eyebrow, title, intro, className = "", children }) => {
   return (
     <section id={id} className={`w-full px-4 py-16 sm:py-24 ${className}`}>

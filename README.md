@@ -4,17 +4,29 @@ Persönliche Portfolio-Website (deutschsprachig), live unter [danielmeisterling.
 
 ## Stack
 
-React 18 (Create React App), Tailwind CSS 3, React Router, react-scroll. Deployment über Netlify.
+React 18, Vite, Tailwind CSS 3, React Router, react-scroll. Deployment über Netlify (Build-Befehl `npm run build`, Publish-Verzeichnis `build`, Node-Version aus `.nvmrc`).
 
 ## Entwicklung
 
 ```bash
 npm install
-npm start                          # Dev-Server auf http://localhost:3000
-npm run build                      # Produktions-Build nach build/
-npm test -- --watchAll=false       # Smoke-Tests
-npx eslint "src/**/*.{js,jsx}"     # Linting
+npm run dev      # Dev-Server auf http://localhost:5173
+npm run build    # Produktions-Build inkl. Prerendering nach build/
+npm run preview  # Build lokal ansehen
+npm test         # Vitest
+npm run lint     # ESLint
 ```
+
+## Prerendering
+
+`npm run build` erzeugt zuerst das Client-Bundle und rendert danach `/`, `/Impressum` und `/Datenschutz`
+mit `src/entry-server.jsx` und `scripts/prerender.js` zu fertigem HTML (`index.html`, `Impressum.html`,
+`Datenschutz.html`). Titel, Canonical-URL und `og:url` werden pro Seite gesetzt. Im Browser hydriert React
+das HTML (`src/main.jsx`). Prerendert wird die deutsche Fassung; eine gespeicherte Sprachwahl wird nach der
+Hydration angewendet. `app-shell.html` ist das leere Fallback für alle übrigen Pfade (siehe `public/_redirects`).
+
+Neue Seiten müssen in `pages` in `src/entry-server.jsx`, in `public/_redirects` und in `public/sitemap.xml`
+ergänzt werden.
 
 ## Inhalte pflegen
 

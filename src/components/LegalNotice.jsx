@@ -1,8 +1,8 @@
-import React from "react";
-import { useLanguage } from "../i18n/LanguageContext";
+import { useDocumentTitle, useLanguage } from "../i18n/LanguageContext";
 
 const LegalNotice = () => {
   const { t } = useLanguage();
+  useDocumentTitle(t.meta.imprintTitle);
 
   return (
     <section className="section-bg w-full px-4 pb-16 pt-28 sm:pt-32">

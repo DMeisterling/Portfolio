@@ -1,6 +1,8 @@
 const de = {
   meta: {
     title: "Daniel Meisterling – Frontend-fokussierter Full-Stack-Engineer",
+    imprintTitle: "Impressum – Daniel Meisterling",
+    privacyTitle: "Datenschutzerklärung – Daniel Meisterling",
     description:
       "Daniel Meisterling – Frontend-fokussierter Full-Stack-Engineer und Lead of Development. Moderne Webanwendungen und SaaS-Produkte mit Angular, TypeScript und .NET, von der Architektur bis zum produktiven Betrieb.",
   },

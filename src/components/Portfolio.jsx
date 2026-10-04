@@ -1,4 +1,3 @@
-import React from "react";
 import { projects } from "../data/profile";
 import { useLanguage } from "../i18n/LanguageContext";
 import ProjectCard from "./ProjectCard";

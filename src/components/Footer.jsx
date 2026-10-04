@@ -1,4 +1,3 @@
-import React from "react";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 import { HiOutlineMail } from "react-icons/hi";
 import { Link } from "react-router-dom";
@@ -17,7 +16,7 @@ const Footer = () => {
   return (
     <footer className="border-t border-slate-300 px-4 py-10 dark:border-gray-800">
       <div className="mx-auto flex max-w-screen-lg flex-col items-center gap-6 text-sm text-gray-600 dark:text-gray-400 sm:flex-row sm:justify-between">
-        <p>© {new Date().getFullYear()} Daniel Meisterling</p>
+        <p suppressHydrationWarning>© {new Date().getFullYear()} Daniel Meisterling</p>
         <ul className="flex gap-5">
           {socials.map(({ id, href, icon: Icon }) => (
             <li key={id}>

@@ -1,4 +1,3 @@
-import React from "react";
 import { Link, scroller } from "react-scroll";
 
 export const scrollOptions = { smooth: true, duration: 500, offset: -64 };

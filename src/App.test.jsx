@@ -1,7 +1,15 @@
-import "@testing-library/jest-dom";
 import { fireEvent, render, screen } from "@testing-library/react";
+import { MemoryRouter } from "react-router-dom";
 import App from "./App";
+import { pages, render as renderPage } from "./entry-server";
 import { dictionaries } from "./i18n/LanguageContext";
+
+const renderApp = (path = "/") =>
+  render(
+    <MemoryRouter initialEntries={[path]}>
+      <App />
+    </MemoryRouter>
+  );
 
 beforeAll(() => {
   window.matchMedia = () => ({
@@ -15,7 +23,7 @@ beforeAll(() => {
 beforeEach(() => localStorage.clear());
 
 test("renders hero and all main sections", () => {
-  render(<App />);
+  renderApp();
 
   expect(
     screen.getByRole("heading", { level: 1, name: "Daniel Meisterling" })
@@ -27,7 +35,7 @@ test("renders hero and all main sections", () => {
 });
 
 test("footer shows the current year and legal links", () => {
-  render(<App />);
+  renderApp();
 
   expect(
     screen.getByText(`© ${new Date().getFullYear()} Daniel Meisterling`)
@@ -37,7 +45,7 @@ test("footer shows the current year and legal links", () => {
 });
 
 test("switches the language to English and back", () => {
-  render(<App />);
+  renderApp();
 
   fireEvent.click(screen.getAllByRole("button", { name: "en" })[0]);
   expect(screen.getByText("Selected projects", { selector: ".eyebrow" })).toBeInTheDocument();
@@ -46,6 +54,13 @@ test("switches the language to English and back", () => {
 
   fireEvent.click(screen.getAllByRole("button", { name: "de" })[0]);
   expect(screen.getByText("Ausgewählte Projekte", { selector: ".eyebrow" })).toBeInTheDocument();
+});
+
+test("restores the stored language after the first render", async () => {
+  localStorage.setItem("language", "en");
+  renderApp();
+
+  expect(await screen.findByText("Selected projects", { selector: ".eyebrow" })).toBeInTheDocument();
 });
 
 const shape = (value) => {
@@ -59,4 +74,14 @@ const shape = (value) => {
 test("all locales provide the same translation keys", () => {
   const [reference, ...others] = Object.values(dictionaries);
   others.forEach((dictionary) => expect(shape(dictionary)).toEqual(shape(reference)));
+});
+
+test("prerendered pages contain their content without JavaScript", () => {
+  const html = Object.fromEntries(pages.map(({ path }) => [path, renderPage(path)]));
+
+  expect(html["/"]).toContain("Ausgewählte Projekte");
+  expect(html["/"]).toContain('href="https://poeanalyze.com"');
+  expect(html["/"]).toContain('href="https://fleissaufgabe.com"');
+  expect(html["/Impressum"]).toContain("Angaben gemäß § 5 TMG");
+  expect(html["/Datenschutz"]).toContain("Datenschutz");
 });

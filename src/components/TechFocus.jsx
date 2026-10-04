@@ -1,4 +1,3 @@
-import React from "react";
 import { techFocus } from "../data/profile";
 import { useLanguage } from "../i18n/LanguageContext";
 import Section from "./Section";

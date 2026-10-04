@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import About from "./components/About";
 import Contact from "./components/Contact";
 import Experience from "./components/Experience";
@@ -36,30 +36,28 @@ function App() {
 
   return (
     <LanguageProvider>
-      <BrowserRouter>
-        <ScrollManager />
-        <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
-        <main>
-          <Routes>
-            <Route
-              path="/"
-              element={
-                <>
-                  <Home />
-                  <Portfolio />
-                  <Experience />
-                  <TechFocus />
-                  <About />
-                  <Contact />
-                </>
-              }
-            />
-            <Route path="/Impressum" element={<LegalNotice />} />
-            <Route path="/Datenschutz" element={<Security />} />
-          </Routes>
-        </main>
-        <Footer />
-      </BrowserRouter>
+      <ScrollManager />
+      <NavBar darkMode={darkMode} setDarkMode={setDarkMode} />
+      <main>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Home />
+                <Portfolio />
+                <Experience />
+                <TechFocus />
+                <About />
+                <Contact />
+              </>
+            }
+          />
+          <Route path="/Impressum" element={<LegalNotice />} />
+          <Route path="/Datenschutz" element={<Security />} />
+        </Routes>
+      </main>
+      <Footer />
     </LanguageProvider>
   );
 }

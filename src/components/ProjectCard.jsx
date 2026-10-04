@@ -1,4 +1,3 @@
-import React from "react";
 import { FiCheck, FiExternalLink, FiFileText } from "react-icons/fi";
 import { useLanguage } from "../i18n/LanguageContext";
 

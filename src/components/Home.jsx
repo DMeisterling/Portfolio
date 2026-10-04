@@ -1,14 +1,14 @@
-import React from "react";
 import { FaLinkedin } from "react-icons/fa";
 import { FiArrowDown } from "react-icons/fi";
 import heroImage from "../assets/hero.jpg";
 import { contact } from "../data/profile";
-import { useLanguage } from "../i18n/LanguageContext";
+import { useDocumentTitle, useLanguage } from "../i18n/LanguageContext";
 import ScrollLink from "./ScrollLink";
 
 const Home = () => {
   const { t } = useLanguage();
   const { hero } = t;
+  useDocumentTitle(t.meta.title);
 
   return (
     <section id="home" className="section-bg w-full px-4 pb-16 pt-28 sm:pb-24 sm:pt-36">

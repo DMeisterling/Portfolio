@@ -1,9 +1,9 @@
-import React from "react";
-import { useLanguage } from "../i18n/LanguageContext";
+import { useDocumentTitle, useLanguage } from "../i18n/LanguageContext";
 import "../secStyle.css";
 
 const Security = () => {
   const { t } = useLanguage();
+  useDocumentTitle(t.meta.privacyTitle);
 
   return (
     <section className="section-bg w-full px-4 pb-16 pt-28 sm:pt-32">

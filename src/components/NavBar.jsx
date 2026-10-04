@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { FaBars, FaTimes } from "react-icons/fa";
 import { FiMoon, FiSun } from "react-icons/fi";
 import { Link as RouterLink, useLocation } from "react-router-dom";
@@ -63,8 +63,6 @@ const NavBar = ({ darkMode, setDarkMode }) => {
     return () => desktop.removeEventListener("change", close);
   }, []);
 
-  useEffect(() => setMenuOpen(false), [pathname]);
-
   const navIds = sectionIds.filter((id) => id !== "home");
 
   const renderLink = (id, label, className) =>
@@ -79,7 +77,7 @@ const NavBar = ({ darkMode, setDarkMode }) => {
         {label}
       </ScrollLink>
     ) : (
-      <RouterLink to={`/#${id}`} className={className}>
+      <RouterLink to={`/#${id}`} className={className} onClick={() => setMenuOpen(false)}>
         {label}
       </RouterLink>
     );
